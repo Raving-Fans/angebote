@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700&display=swap" rel="stylesheet">
+<title>Mingsmed x Raving Fans</title>
+<style>
+  :root{
+    --bg:#F5F6F2; --text:#211F1A; --muted:#514D46; --faint:#8A867D;
+    --card:#FFFFFF; --line:rgba(33,31,26,.08); --line-strong:rgba(33,31,26,.14);
+    --green:#407C11; --blue:#03328A; --grad:linear-gradient(30deg,#407C11,#03328A);
+    --shadow:0 1px 2px rgba(33,31,26,.04),0 8px 24px rgba(33,31,26,.05);
+    --display:"Josefin Sans",Georgia,serif;
+    --body:"Ubuntu",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:1120px;
+  }
+  :root[data-theme="dark"]{
+    --bg:#181A16; --text:#F1F0EA; --muted:#B4B1A7; --faint:#807D74;
+    --card:#22241F; --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    transition:background .3s ease,color .3s ease}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:28px;padding-right:28px}
+  .display{font-family:var(--display);font-style:italic;font-weight:700;letter-spacing:-.01em;line-height:1.02}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--display);font-style:italic;font-weight:700;font-size:24px}
+  .logo b{font-weight:700;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-left:12px}
+  .toggle{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);
+    background:var(--card);color:var(--text);cursor:pointer;font-size:18px;line-height:1;
+    display:grid;place-items:center;transition:transform .2s ease,background .3s ease}
+  .toggle:hover{transform:rotate(20deg)}
+
+  section{padding:104px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);
+    font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .lead{color:var(--muted);font-size:21px;line-height:1.6;max-width:680px;margin-top:22px}
+  h1{font-size:clamp(44px,7.4vw,80px)}
+  h2{font-size:clamp(32px,4.4vw,46px)}
+  h2.display,h1.display{margin-top:18px}
+  .head-block{max-width:700px}
+
+  .hero{padding-top:76px;padding-bottom:44px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;color:var(--faint);
+    font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .meta span{display:inline-flex;align-items:center;gap:9px}
+  .meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.8}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:26px 24px;box-shadow:var(--shadow)}
+  .stat .ic{font-size:22px}
+  .stat .num{font-family:var(--display);font-style:italic;font-weight:700;font-size:36px;margin:14px 0 8px}
+  .stat .lbl{color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.07em;text-transform:uppercase;line-height:1.4}
+
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+  .persp{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+  .persp.spotlight{border-color:color-mix(in srgb,var(--green) 45%,var(--line));
+    box-shadow:var(--shadow),0 0 0 1px color-mix(in srgb,var(--green) 25%,transparent) inset}
+  .persp .ic{font-size:28px}
+  .persp h3{font-size:22px;font-weight:700;margin:16px 0 10px;letter-spacing:-.01em}
+  .persp p{color:var(--muted);font-size:16px}
+  .persp .quote{color:var(--text);font-style:italic;font-size:16px;margin-top:14px;
+    padding-left:16px;border-left:3px solid color-mix(in srgb,var(--green) 40%,transparent)}
+  .persp .tag{display:inline-block;margin-top:18px;color:var(--faint);font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .persp.spotlight .tag{color:var(--green)}
+
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .mini{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+  .mini:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(33,31,26,.05),0 16px 36px rgba(33,31,26,.09)}
+  .mini .ic{font-size:24px}
+  .mini h3{font-size:18px;font-weight:700;margin:14px 0 8px;letter-spacing:-.01em}
+  .mini p{color:var(--muted);font-size:15px}
+  .mini .draw{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity .2s ease;z-index:4}
+  .mini .draw rect{x:1px;y:1px;width:calc(100% - 2px);height:calc(100% - 2px);rx:17px;ry:17px;fill:none;
+    stroke:url(#rfgrad);stroke-width:1.8;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100}
+  .mini:hover .draw{opacity:1}
+  .mini:hover .draw rect{animation:drawborder .95s ease forwards}
+  @keyframes drawborder{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+  @media(prefers-reduced-motion:reduce){.mini:hover .draw rect{animation:none;stroke-dashoffset:0}}
+
+  .timeline{position:relative;margin-top:56px;padding-top:4px;padding-bottom:8px}
+  .tl-line{position:absolute;top:13px;left:16.667%;right:16.667%;height:3px;background:var(--line-strong);border-radius:3px}
+  .tl-runner{position:absolute;top:13px;left:16.667%;width:18px;height:18px;border-radius:50%;
+    background:var(--grad);box-shadow:0 0 0 6px color-mix(in srgb,var(--green) 16%,transparent);
+    transform:translate(-50%,-50%);animation:tlrun 7s cubic-bezier(.65,0,.35,1) infinite}
+  @keyframes tlrun{0%,10%{left:16.667%}45%,52%{left:50%}88%,100%{left:83.333%}}
+  .tl-nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tl-phase{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .tl-dot{width:22px;height:22px;border-radius:50%;background:var(--card);border:3px solid var(--green);
+    position:relative;z-index:2;margin-bottom:22px;box-shadow:0 0 0 4px var(--bg)}
+  .tl-when{color:var(--faint);font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .tl-phase h3{font-size:19px;font-weight:700;margin:11px 0 8px;letter-spacing:-.01em}
+  .tl-phase p{color:var(--muted);font-size:14.5px;max-width:250px}
+  .tl-tag{margin-top:12px;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .tl-tag.wir{background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue)}
+  .tl-tag.gem{background:color-mix(in srgb,var(--green) 13%,transparent);color:var(--green)}
+  @media(prefers-reduced-motion:reduce){.tl-runner{animation:none;left:83.333%}}
+
+  .notebar{margin-top:26px;background:color-mix(in srgb,var(--blue) 7%,var(--card));
+    border:1px solid color-mix(in srgb,var(--blue) 22%,var(--line));border-radius:16px;padding:24px 26px;
+    display:flex;gap:16px;align-items:flex-start}
+  .notebar.good{background:color-mix(in srgb,var(--green) 8%,var(--card));border-color:color-mix(in srgb,var(--green) 26%,var(--line))}
+  .notebar .ic{font-size:22px;line-height:1.3}
+  .notebar p{color:var(--muted);font-size:15.5px}
+  .notebar b{color:var(--text)}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+  .step .n{font-family:var(--display);font-style:italic;font-weight:700;font-size:40px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .step h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15px}
+
+  .price{margin-top:52px;background:var(--card);border:1px solid var(--line-strong);border-radius:24px;
+    padding:44px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .price .big{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(52px,8vw,84px);line-height:1}
+  .price .subline{color:var(--muted);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px}
+  .price .rows{display:flex;flex-direction:column;gap:14px}
+  .price .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .price .row:last-child{border-bottom:0;padding-bottom:0}
+  .price .row .k{color:var(--muted);font-size:15px}
+  .price .row .v{font-family:var(--display);font-style:italic;font-weight:700;font-size:22px}
+  .price .deal{display:inline-block;margin-top:0;background:color-mix(in srgb,var(--green) 13%,transparent);
+    color:var(--green);font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:8px 14px;border-radius:999px}
+  .strike{color:var(--faint);text-decoration:line-through;font-size:16px;font-style:normal}
+  .cta{margin-top:26px;color:var(--muted);font-size:16px;max-width:640px}
+  .cta b{color:var(--text)}
+
+  .closing{text-align:center;padding:112px 28px 104px}
+  .closing .quote{font-family:var(--display);font-style:italic;font-weight:700;
+    font-size:clamp(28px,4.4vw,44px);line-height:1.15;max-width:920px;margin:0 auto;letter-spacing:-.01em}
+  .closing .mark{margin-top:34px;font-family:var(--display);font-style:italic;font-weight:700;font-size:20px;letter-spacing:.02em;color:var(--faint)}
+
+  .rule{height:1px;background:var(--line);border:0;max-width:var(--maxw);margin:0 auto}
+
+  html:not(.js-anim) .reveal{opacity:1;transform:none}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1 !important;transform:none !important;transition:none}}
+
+  @media(max-width:900px){
+    .stats,.steps,.grid4,.cols3,.tl-nodes{grid-template-columns:repeat(2,1fr)}
+    .grid2,.cols2,.price{grid-template-columns:1fr}
+    .tl-line,.tl-runner{display:none}
+    section{padding:76px 0}
+    .price{gap:28px;padding:34px}
+  }
+  @media(max-width:540px){
+    body{font-size:16px}
+    .stats,.steps,.grid4,.cols3,.tl-nodes{grid-template-columns:1fr}
+    .wrap{padding-left:20px;padding-right:20px}
+    section{padding:58px 0}
+    .lead{font-size:19px}
+  }
+</style>
+
+<script>document.documentElement.className+=' js-anim';</script>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="rfgrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#407C11"/><stop offset="100%" stop-color="#03328A"/></linearGradient></defs></svg>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">Raving Fans.<b>x Mingsmed</b></div>
+    <button class="toggle" id="themeToggle" aria-label="Hell/Dunkel umschalten">☀︎</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap" aria-label="Einstieg">
+  <span class="eyebrow reveal">Rückblick und Ausblick</span>
+  <h1 class="display reveal">Das Fundament steht.<br><span class="grad">Jetzt kommt die Ernte.</span></h1>
+  <p class="lead reveal">Drei Monate, in denen wir dir den Kopf frei gemacht, dein Team aufgebaut und deine Prozesse ins System gebracht haben. Hier ist, was wir geschafft haben, was dir wichtig ist und wie die nächsten drei Monate aussehen.</p>
+  <div class="meta reveal">
+    <span>Rückblick</span>
+    <span>Plan September bis November</span>
+    <span>Dein nächster Schritt</span>
+  </div>
+  <div class="stats">
+    <div class="stat reveal"><div class="ic">🎯</div><div class="num">1 Mio</div><div class="lbl">Jahresziel geknackt, Haken dran</div></div>
+    <div class="stat reveal"><div class="ic">🧑‍💼</div><div class="num">Lillith</div><div class="lbl">Gefunden und eingearbeitet, nimmt dir Arbeit ab</div></div>
+    <div class="stat reveal"><div class="ic">📥</div><div class="num">0</div><div class="lbl">Support-Mails, die du selbst checken musst</div></div>
+    <div class="stat reveal"><div class="ic">💚</div><div class="num">8 / 11</div><div class="lbl">Schüler empfehlen dich, ganz von selbst</div></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- RUECKBLICK -->
+<section class="wrap" aria-label="Rückblick">
+  <div class="head-block">
+    <span class="eyebrow reveal">Was sich verändert hat</span>
+    <h2 class="display reveal">Drei Monate, die viel bewegt haben.</h2>
+    <p class="lead reveal">Das Beste daran: die stärksten Sätze zum Rückblick kamen von dir selbst.</p>
+  </div>
+  <div class="grid2">
+    <div class="persp reveal"><div class="ic">😄</div><h3>Die Freude ist zurück</h3><p>Die Schüler-Umfragen haben dir gezeigt, dass die meisten glücklich sind, nicht nur die zwei, drei, die am lautesten schreien.</p><p class="quote">Ich gehe wieder mit richtig viel Freude rein, nicht mehr so abgefuckt.</p></div>
+    <div class="persp reveal"><div class="ic">🧑‍💼</div><h3>Endlich echte Entlastung</h3><p>Die neue Mitarbeiterin ist gefunden und eingearbeitet. Du musstest nur ein Gespräch führen, den Rest haben wir übernommen.</p><p class="quote">Absoluter Luxus. Sie nimmt mir so viel ab.</p></div>
+    <div class="persp reveal"><div class="ic">🧠</div><h3>Der Kopf ist frei</h3><p>Airtable als To-Do-System. Alles an einem Ort, statt verstreut über WhatsApp, Drive und Erinnerung.</p><p class="quote">Ich weiß wirklich, ich bin fertig, ich kann den Computer stehen lassen.</p></div>
+    <div class="persp reveal"><div class="ic">🤝</div><h3>Sarah verkauft selbst</h3><p>Die Beratungsgespräche laufen jetzt über Sarah. Die Leute schließen durch sie ab, ganz ohne dich.</p><p class="quote">Sie hat mehr Selbstvertrauen, das ist richtig schön zu sehen.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WAS DIR WICHTIG IST -->
+<section class="wrap" aria-label="Deine Themen">
+  <div class="head-block">
+    <span class="eyebrow reveal">Was dir wichtig ist</span>
+    <h2 class="display reveal">Wir haben genau zugehört.</h2>
+    <p class="lead reveal">Das sind die Punkte, die du im Gespräch genannt hast. Genau daran richten wir die nächsten Monate aus.</p>
+  </div>
+  <div class="grid4 cols3">
+    <div class="mini reveal"><div class="ic">🎛️</div><h3>Mehr wirklich abgeben</h3><p>Technik, Zugänge, ActiveCampaign. Nie wieder der Gedanke, warum mache ich das eigentlich gerade selbst.</p></div>
+    <div class="mini reveal"><div class="ic">🎯</div><h3>Arbeiten, wie es zu dir passt</h3><p>Konkrete Fragen statt schau dir das an und gib frei. Kurze Meetings, Zeit direkt danach.</p></div>
+    <div class="mini reveal"><div class="ic">🔁</div><h3>Feedback spiegeln</h3><p>Den Schülern die positiven Dinge zurückgeben, in beiden Kursen. Alle bleiben positiv gestimmt.</p></div>
+    <div class="mini reveal"><div class="ic">💬</div><h3>Mehr Nähe in der Community</h3><p>Nicht ausdünnen, sondern Interaktion anregen. Die Verbindung ist das, was deine Leute hält.</p></div>
+    <div class="mini reveal"><div class="ic">🔦</div><h3>Durchblick beim 6er</h3><p>Raus aus dem Blackbox-Gefühl. Endlich sehen, wie die Stimmung im großen Kurs wirklich ist.</p></div>
+    <div class="mini reveal"><div class="ic">📦</div><h3>Das Buchthema los</h3><p>Komplett abgeben, so wie beim Recruiting. Ein direkter Gegenwert, der dir echte Arbeit abnimmt.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PLAN / TIMELINE -->
+<section class="wrap" aria-label="Plan">
+  <div class="head-block">
+    <span class="eyebrow reveal">Der Plan</span>
+    <h2 class="display reveal">Die nächsten drei Monate.</h2>
+    <p class="lead reveal">Genau so, wie wir es heute gemeinsam aufgezeichnet haben. Erst der Umsatz, der sich sofort anschalten lässt, dann Nähe und der 6er, dann Empfehlungen als Selbstläufer.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-line"></div>
+    <div class="tl-runner"></div>
+    <div class="tl-nodes">
+      <div class="tl-phase reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-when">Monat 1 · September</span>
+        <h3>Umsatz sofort anschalten</h3>
+        <p>108 Rezensionen raus und den Feedback-Frame auswerten. Mündliche Vorbereitung und Recap-Call als Verlängerungs-Touchpoint. Onboarding finalisieren, Feedback-Calls, und der Bücher-Prozess steht plus Versand Ende September.</p>
+        <span class="tl-tag gem">Höchste Prio</span>
+      </div>
+      <div class="tl-phase reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-when">Monat 2 · Oktober</span>
+        <h3>Nähe und der 6er</h3>
+        <p>Kundendashboard mit den wichtigsten Grunddaten, weniger Support-Fragen. Mehr Interaktion in der Community, Feedback-Auswertung posten, Sarahs Support stärken und die Verlängerungsaktion für den 6er aufbauen.</p>
+        <span class="tl-tag gem">Gemeinsam</span>
+      </div>
+      <div class="tl-phase reveal">
+        <div class="tl-dot"></div>
+        <span class="tl-when">Monat 3 · November</span>
+        <h3>Empfehlungen als Selbstläufer</h3>
+        <p>Das Empfehlungsprogramm, sauber auf dem Feedback-Frame aufgesetzt. Aus begeisterten Schülern werden Vertriebler. Plus die Frage nach einem Ticket-System.</p>
+        <span class="tl-tag wir">Liegt bei uns</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- HEBEL IM DETAIL -->
+<section class="wrap" aria-label="Hebel">
+  <div class="head-block">
+    <span class="eyebrow reveal">Die Hebel im Detail</span>
+    <h2 class="display reveal">Woran wir konkret arbeiten.</h2>
+  </div>
+  <div class="grid4">
+    <div class="mini reveal"><div class="ic">📊</div><h3>Feedback-Frame</h3><p>Regelmäßiges Feedback, das du spiegeln kannst. Das Fundament für Verlängerungen und Rezensionen.</p></div>
+    <div class="mini reveal"><div class="ic">🔄</div><h3>Verlängerungs-System</h3><p>Klare Touchpoints und Empfehlungen, damit Verlängern für deine Schüler der logische Schritt wird.</p></div>
+    <div class="mini reveal"><div class="ic">⭐</div><h3>108 Rezensionen</h3><p>Die liegen gebliebenen Bewertungen endlich raus, plus ein laufender Prozess für neue.</p></div>
+    <div class="mini reveal"><div class="ic">🎓</div><h3>Mündliche Vorbereitung</h3><p>Als eigenes Angebot platziert. Die zweite Art, wie deine Schüler verlängern können.</p></div>
+    <div class="mini reveal"><div class="ic">🚀</div><h3>6er-Kurs upgraden</h3><p>Alles, was im 12er läuft, sauber auf den 6er übertragen. Kein Kurs zweiter Klasse mehr.</p></div>
+    <div class="mini reveal"><div class="ic">🔥</div><h3>Community-Aktion</h3><p>Einmal im Quartal eine Aktion, die Bindung schafft, ohne die Leute zu überfordern.</p></div>
+    <div class="mini reveal"><div class="ic">🧭</div><h3>Kundendashboard</h3><p>Schüler sehen selbst Kursstand, Prüfung und Restzeit. Weniger nervige Fragen, mehr Verlängerungs-Trigger.</p></div>
+    <div class="mini reveal"><div class="ic">🎬</div><h3>Onboarding finalisieren</h3><p>6er und 12er sauber getrennt. Du gibst nur noch die Unterschiede durch, wir setzen um.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- BUCHVERSAND -->
+<section class="wrap" aria-label="Buchversand">
+  <div class="head-block">
+    <span class="eyebrow reveal">Dein größter Nervenfresser</span>
+    <h2 class="display reveal">So nehmen wir dir das Buch- und Versandthema ab.</h2>
+    <p class="lead reveal">Wir haben den kompletten Ablauf durchgeplant, inklusive der ehrlichen Frage, wie viel wir wirklich übernehmen können. Kurz gesagt: das System bauen und betreiben wir, du gibst am Ende nur frei und schaust auf ein Dashboard.</p>
+  </div>
+  <div class="grid2">
+    <div class="persp spotlight reveal"><div class="ic">📮</div><h3>Weg 1: Über einen Dienstleister</h3><p>Ein Partner druckt, stellt die Sets zusammen, frankiert, versendet und managt die Rückläufer. Dann ist auch das Packen weg von dir. Wir fragen zwei bis drei Anbieter mit einem klaren Anforderungsprofil an und rechnen den Preis pro Set gegen, damit der Vergleich zu deinem bisherigen Angebot fair ist.</p><span class="tag">Am wenigsten Arbeit für dich</span></div>
+    <div class="persp reveal"><div class="ic">⚙️</div><h3>Weg 2: Eigenversand mit unserem System</h3><p>Wir bauen dir in Airtable die Versandstruktur und eine kleine App auf deinem Server, der eh schon läuft. Sie zeigt pro Person: Adresse, welche Hefte ins Paket, ein Klick auf gepackt. Die Labels kommen per CSV-Upload auf Labelpapier, kein Suchen, kein Excel. Gepackt und eingeworfen wird von einer festen Versandkraft, nicht von dir.</p><span class="tag">Volle Kontrolle im Haus</span></div>
+  </div>
+  <div class="notebar good reveal">
+    <div class="ic">📦</div>
+    <p><b>In beiden Wegen dabei.</b> Unser System verfolgt jede Sendung automatisch. Wird etwas nicht direkt zugestellt, bekommt der Teilnehmer von selbst eine freundliche Info-Mail, dass er einmal in seiner Filiale oder Packstation nach dem Paket schauen soll. Du musst nichts mehr manuell durchklicken, und niemand wartet mehr wochenlang blind, so wie es dich bei Thieme genervt hat.</p>
+  </div>
+  <div class="notebar reveal">
+    <div class="ic">🤝</div>
+    <p><b>Ehrlich dazu, damit du dich drauf verlassen kannst.</b> Das System und die Steuerung sind unser Teil, das kriegen wir zügig hin. Zwei Dinge liegen nicht bei uns und die klären wir diese Woche gemeinsam, weil die Deadline knapp ist: bis wann sind die ersten zwei Module druckfertig, und wer übernimmt das physische Packen im Eigenversand. Sobald das steht, läuft der Rest bei uns.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ARBEITSWEISE -->
+<section class="wrap" aria-label="Arbeitsweise">
+  <div class="head-block">
+    <span class="eyebrow reveal">So arbeiten wir ab jetzt</span>
+    <h2 class="display reveal">Weniger Last auf dir. Mehr Umsetzung bei uns.</h2>
+    <p class="lead reveal">Genau so, wie wir es heute festgehalten haben. Kurz, konkret, keine Aufgabe größer als eine Stunde, und danach hast du es abgegeben.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="n">1</div><h3>Kurze Meetings</h3><p>30 Minuten, klar durchgetaktet. Kein Ausufern mehr.</p></div>
+    <div class="step reveal"><div class="n">2</div><h3>Konkrete Fragen</h3><p>Du bekommst eine klare Liste, beantwortest sie per Sprachnotiz, und weiter geht es.</p></div>
+    <div class="step reveal"><div class="n">3</div><h3>Zeit direkt danach</h3><p>Wir blocken dir nach dem Meeting einen kurzen Slot, in dem du die Sachen im Flow erledigst.</p></div>
+    <div class="step reveal"><div class="n">4</div><h3>Wir setzen um</h3><p>Mit deinem Vertrauen veröffentlichen wir eigenständig und sagen dir nur, was live ist.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- INVESTMENT -->
+<section class="wrap" aria-label="Investment">
+  <div class="head-block">
+    <span class="eyebrow reveal">Dein Investment</span>
+    <h2 class="display reveal">Dein Deal vom Start gilt weiter.</h2>
+    <p class="lead reveal">Die Zusammenarbeit läuft nahtlos weiter, du musst nichts umstellen. Eine Einmalzahlung, so wie du es magst.</p>
+  </div>
+  <div class="price reveal">
+    <div>
+      <span class="deal">Dein Sonderpreis bleibt</span>
+      <div class="big" data-count="10500" data-suffix=" &euro;">10.500 &euro;</div>
+      <div class="subline">3 Monate Zusammenarbeit · eine Einmalzahlung</div>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="k">Dein Monatspreis</span><span class="v">3.500 &euro; <span class="strike">4.000 &euro;</span></span></div>
+      <div class="row"><span class="k">Laufzeit</span><span class="v">3 Monate</span></div>
+      <div class="row"><span class="k">Gesamt, einmalig</span><span class="v">10.500 &euro;</span></div>
+    </div>
+  </div>
+  <p class="cta reveal"><b>Dein nächster Schritt:</b> Sag kurz Bescheid, dann legen wir los. Beim Buchversand starten wir sofort, ohne auf irgendetwas zu warten.</p>
+</section>
+
+<!-- CLOSING -->
+<section class="closing wrap" aria-label="Abschluss">
+  <p class="quote reveal">Ein guter Launch ist schön.<br>Ein Business, das ohne den nächsten Launch stabil bleibt, ist unbezahlbar.</p>
+  <div class="mark reveal">Raving Fans.</div>
+</section>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeToggle');
+    var saved=null; try{saved=localStorage.getItem('rf-theme');}catch(e){}
+    var mq=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)');
+    function apply(t){root.setAttribute('data-theme',t);btn.textContent=(t==='dark')?'☾':'☀︎';}
+    apply(saved||(mq&&mq.matches?'dark':'light'));
+    btn.addEventListener('click',function(){
+      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      apply(next);try{localStorage.setItem('rf-theme',next);}catch(e){}
+    });
+  })();
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    document.querySelectorAll('.mini').forEach(function(c){
+      var svg=document.createElementNS(NS,'svg');svg.setAttribute('class','draw');svg.setAttribute('aria-hidden','true');
+      var r=document.createElementNS(NS,'rect');r.setAttribute('pathLength','100');
+      svg.appendChild(r);c.appendChild(svg);
+    });
+  })();
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=[].slice.call(document.querySelectorAll('.reveal'));
+    function countUp(el){
+      var target=parseFloat(el.getAttribute('data-count'));var suf=el.getAttribute('data-suffix')||'';
+      var start=null,dur=1100;
+      function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+        var e=1-Math.pow(1-p,3);var val=Math.round(target*e);
+        el.textContent=val.toLocaleString('de-DE')+suf;
+        if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    }
+    if(reduce||!('IntersectionObserver'in window)){
+      els.forEach(function(el){el.classList.add('in');});return;
+    }
+    // stagger within shared parent rows
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var el=en.target;
+          var sibs=[].slice.call(el.parentNode.children).filter(function(n){return n.classList.contains('reveal');});
+          var idx=sibs.indexOf(el);
+          el.style.transitionDelay=(Math.max(idx,0)*80)+'ms';
+          el.classList.add('in');
+          if(el.hasAttribute('data-count'))countUp(el);
+          io.unobserve(el);
+        }
+      });
+    },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+
+</body>
+</html>

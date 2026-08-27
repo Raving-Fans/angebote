@@ -182,8 +182,22 @@
 </header>
 
 <style>
-  .price .big{font-size:clamp(30px,4vw,42px);margin-top:4px}
-  .price .picon{font-size:30px;line-height:1;margin-bottom:8px}
+  section{padding:72px 0}
+  .persp{padding:26px}
+  .mini{padding:22px 20px}
+  .mini .qt{font-style:italic;color:var(--text);font-size:15px;margin-top:8px}
+  .hero{padding-bottom:12px}
+  .timeline.slim{margin-top:36px;margin-bottom:44px}
+  .timeline.slim .tl-phase p{font-size:13.5px;max-width:210px}
+  .subh{font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-top:44px;display:block}
+  .pricebar{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line-strong);border-radius:18px;padding:22px 26px;box-shadow:var(--shadow);margin-top:16px}
+  .pricebar .pb-ic{font-size:30px;line-height:1}
+  .pricebar .deal{display:inline-block;background:color-mix(in srgb,var(--green) 13%,transparent);color:var(--green);font-weight:700;font-size:12px;letter-spacing:.04em;padding:6px 12px;border-radius:999px}
+  .pricebar .pb-num{font-family:var(--display);font-style:italic;font-weight:700;font-size:32px;margin-top:8px;line-height:1}
+  .pricebar .pb-sub{font-family:var(--body);font-style:normal;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+  .pricebar .pb-line{color:var(--muted);font-size:15px;margin-top:9px}
+  .pricebar .strike{color:var(--faint);text-decoration:line-through}
+  .cta{margin-top:20px}
 </style>
 
 <!-- HERO -->
@@ -191,12 +205,6 @@
   <span class="eyebrow reveal">Rückblick und Ausblick</span>
   <h1 class="display reveal">Das Fundament steht.<br><span class="grad">Jetzt kommt die Ernte.</span></h1>
   <p class="lead reveal">Drei Monate Kopf frei, Team aufgebaut, Prozesse im System. Jetzt kommt der Teil, der Umsatz bringt.</p>
-  <div class="stats">
-    <div class="stat reveal"><div class="ic">🎯</div><div class="num">1 Mio</div><div class="lbl">Jahresziel geknackt</div></div>
-    <div class="stat reveal"><div class="ic">🧑‍💼</div><div class="num">Lilith</div><div class="lbl">Eingearbeitet, nimmt dir Arbeit ab</div></div>
-    <div class="stat reveal"><div class="ic">📥</div><div class="num">0</div><div class="lbl">Support-Mails für dich</div></div>
-    <div class="stat reveal"><div class="ic">💚</div><div class="num">8 / 11</div><div class="lbl">Schüler empfehlen dich</div></div>
-  </div>
 </section>
 
 <hr class="rule">
@@ -207,11 +215,11 @@
     <span class="eyebrow reveal">Was sich verändert hat</span>
     <h2 class="display reveal">Drei Monate, die viel bewegt haben.</h2>
   </div>
-  <div class="grid2">
-    <div class="persp reveal"><div class="ic">😄</div><h3>Die Freude ist zurück</h3><p class="quote">Ich gehe wieder mit richtig viel Freude rein, nicht mehr so abgefuckt.</p></div>
-    <div class="persp reveal"><div class="ic">🧑‍💼</div><h3>Endlich Entlastung</h3><p>Neue Mitarbeiterin gefunden und eingearbeitet, du musstest nur ein Gespräch führen.</p><p class="quote">Absoluter Luxus.</p></div>
-    <div class="persp reveal"><div class="ic">🧠</div><h3>Der Kopf ist frei</h3><p class="quote">Ich weiß wirklich, ich bin fertig, ich kann den Computer stehen lassen.</p></div>
-    <div class="persp reveal"><div class="ic">🤝</div><h3>Sarah verkauft selbst</h3><p>Die Beratungsgespräche laufen jetzt über sie.</p><p class="quote">Die Leute schließen durch sie ab.</p></div>
+  <div class="grid4">
+    <div class="mini reveal"><div class="ic">😄</div><h3>Freude zurück</h3><p class="qt">Ich gehe wieder mit richtig Freude rein.</p></div>
+    <div class="mini reveal"><div class="ic">🧑‍💼</div><h3>Endlich Entlastung</h3><p class="qt">Absoluter Luxus, sie nimmt mir so viel ab.</p></div>
+    <div class="mini reveal"><div class="ic">🧠</div><h3>Kopf frei</h3><p class="qt">Ich bin fertig und kann den Computer stehen lassen.</p></div>
+    <div class="mini reveal"><div class="ic">🤝</div><h3>Sarah verkauft selbst</h3><p class="qt">Die Leute schließen durch sie ab.</p></div>
   </div>
 </section>
 
@@ -235,39 +243,29 @@
 
 <hr class="rule">
 
-<!-- PLAN -->
-<section class="wrap" aria-label="Plan">
+<!-- PLAN + HEBEL KOMBINIERT -->
+<section class="wrap" aria-label="Plan und Hebel">
   <div class="head-block">
-    <span class="eyebrow reveal">Der Plan</span>
+    <span class="eyebrow reveal">Der Plan und die Hebel</span>
     <h2 class="display reveal">Die nächsten drei Monate.</h2>
   </div>
-  <div class="timeline">
+  <div class="timeline slim">
     <div class="tl-line"></div>
     <div class="tl-runner"></div>
     <div class="tl-nodes">
-      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 1 · September</span><h3>Umsatz anschalten</h3><p>108 Rezensionen raus, Verlängerungen pushen, Onboarding fertig, Buchversand steht.</p><span class="tl-tag gem">Höchste Prio</span></div>
-      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 2 · Oktober</span><h3>Nähe und der 6er</h3><p>Kundendashboard, mehr Community, Verlängerungsaktion für den 6er.</p><span class="tl-tag gem">Gemeinsam</span></div>
-      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 3 · November</span><h3>Empfehlungen</h3><p>Empfehlungsprogramm auf dem Feedback-Frame. Aus Schülern werden Vertriebler.</p><span class="tl-tag wir">Liegt bei uns</span></div>
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 1 · September</span><h3>Umsatz anschalten</h3><p>Rezensionen, Verlängerungen, Buchversand.</p></div>
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 2 · Oktober</span><h3>Nähe und der 6er</h3><p>Dashboard, Community, 6er-Verlängerung.</p></div>
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Monat 3 · November</span><h3>Empfehlungen</h3><p>Empfehlungsprogramm auf dem Feedback-Frame.</p></div>
     </div>
   </div>
-</section>
-
-<hr class="rule">
-
-<!-- HEBEL IM DETAIL -->
-<section class="wrap" aria-label="Hebel">
-  <div class="head-block">
-    <span class="eyebrow reveal">Woran wir arbeiten</span>
-    <h2 class="display reveal">Die Hebel im Detail.</h2>
-  </div>
   <div class="grid4">
-    <div class="mini reveal"><div class="ic">📊</div><h3>Feedback-Frame</h3><p>Regelmäßiges Feedback zum Spiegeln. Fundament für Verlängerungen und Rezensionen.</p></div>
-    <div class="mini reveal"><div class="ic">🔄</div><h3>Verlängerungs-System</h3><p>Klare Touchpoints und Empfehlungen, damit Verlängern der logische Schritt wird.</p></div>
-    <div class="mini reveal"><div class="ic">⭐</div><h3>108 Rezensionen</h3><p>Die liegen gebliebenen Bewertungen raus, plus laufender Prozess.</p></div>
+    <div class="mini reveal"><div class="ic">📊</div><h3>Feedback-Frame</h3><p>Regelmäßiges Feedback zum Spiegeln. Fundament für alles Weitere.</p></div>
+    <div class="mini reveal"><div class="ic">🔄</div><h3>Verlängerungs-System</h3><p>Klare Touchpoints, damit Verlängern der logische Schritt wird.</p></div>
+    <div class="mini reveal"><div class="ic">⭐</div><h3>108 Rezensionen</h3><p>Raus, plus laufender Prozess für neue.</p></div>
     <div class="mini reveal"><div class="ic">🎓</div><h3>Mündliche Vorbereitung</h3><p>Als eigenes Angebot, die zweite Art zu verlängern.</p></div>
-    <div class="mini reveal"><div class="ic">🚀</div><h3>6er-Kurs upgraden</h3><p>Alles aus dem 12er sauber auf den 6er übertragen.</p></div>
+    <div class="mini reveal"><div class="ic">🚀</div><h3>6er-Kurs upgraden</h3><p>Alles aus dem 12er auf den 6er übertragen.</p></div>
     <div class="mini reveal"><div class="ic">🔥</div><h3>Community-Aktion</h3><p>Einmal im Quartal eine Aktion, die Bindung schafft.</p></div>
-    <div class="mini reveal"><div class="ic">🧭</div><h3>Kundendashboard</h3><p>Schüler sehen Kursstand und Restzeit selbst. Weniger Fragen.</p></div>
+    <div class="mini reveal"><div class="ic">🧭</div><h3>Kundendashboard</h3><p>Schüler sehen Kursstand selbst. Weniger Fragen.</p></div>
     <div class="mini reveal"><div class="ic">🎬</div><h3>Onboarding finalisieren</h3><p>6er und 12er sauber getrennt.</p></div>
   </div>
 </section>
@@ -279,7 +277,7 @@
   <div class="head-block">
     <span class="eyebrow reveal">Dein größter Nervenfresser</span>
     <h2 class="display reveal">Das Buch- und Versandthema, weg von dir.</h2>
-    <p class="lead reveal">Das System bauen und betreiben wir, du gibst nur frei. Zwei Wege, für beide holen wir dir die Zahlen.</p>
+    <p class="lead reveal">Wir haben uns für dich schon informiert. Wir gehen entweder Weg 1 oder Weg 2, für beide holen wir dir die Zahlen. Das System bauen und betreiben wir, du gibst nur frei.</p>
   </div>
   <div class="grid2">
     <div class="persp spotlight reveal"><div class="ic">📮</div><h3>Weg 1: Dienstleister</h3><p>Ein Partner druckt, packt, frankiert, versendet und managt die Rückläufer. Auch das Packen ist weg von dir.</p><span class="tag">Am wenigsten Arbeit</span></div>
@@ -290,10 +288,10 @@
 
 <hr class="rule">
 
-<!-- ARBEITSWEISE -->
-<section class="wrap" aria-label="Arbeitsweise">
+<!-- ARBEITSWEISE + INVESTMENT KOMBINIERT -->
+<section class="wrap" aria-label="So geht es weiter">
   <div class="head-block">
-    <span class="eyebrow reveal">So arbeiten wir ab jetzt</span>
+    <span class="eyebrow reveal">So geht es weiter</span>
     <h2 class="display reveal">Weniger Last auf dir. Mehr Umsetzung bei uns.</h2>
   </div>
   <div class="steps">
@@ -302,28 +300,15 @@
     <div class="step reveal"><div class="n">3</div><h3>Zeit danach</h3><p>Kurzer Block direkt im Anschluss.</p></div>
     <div class="step reveal"><div class="n">4</div><h3>Wir setzen um</h3><p>Wir veröffentlichen eigenständig.</p></div>
   </div>
-  <div class="notebar good reveal"><div class="ic">🔧</div><p><b>Direkter Draht zur Technik.</b> Inhalte in der Lernwelt machen wir mit eigenem Zugang, Technik läuft direkt über Oliver. Du bist nicht mehr die Schnittstelle für jede Kleinigkeit.</p></div>
-</section>
+  <div class="notebar good reveal"><div class="ic">🔧</div><p><b>Direkter Draht zur Technik.</b> Inhalte in der Lernwelt machen wir mit eigenem Zugang, Technik läuft direkt über Oliver. Du bist nicht mehr die Schnittstelle.</p></div>
 
-<hr class="rule">
-
-<!-- INVESTMENT -->
-<section class="wrap" aria-label="Investment">
-  <div class="head-block">
-    <span class="eyebrow reveal">Dein Investment</span>
-    <h2 class="display reveal">Dein Deal vom Start gilt weiter.</h2>
-  </div>
-  <div class="price reveal">
+  <span class="subh reveal">Dein Investment</span>
+  <div class="pricebar reveal">
+    <div class="pb-ic">🤝</div>
     <div>
-      <div class="picon">🤝</div>
       <span class="deal">Dein Sonderpreis bleibt</span>
-      <div class="big">10.500 &euro;</div>
-      <div class="subline">3 Monate · eine Einmalzahlung</div>
-    </div>
-    <div class="rows">
-      <div class="row"><span class="k">Dein Monatspreis</span><span class="v">3.500 &euro; <span class="strike">4.000 &euro;</span></span></div>
-      <div class="row"><span class="k">Laufzeit</span><span class="v">3 Monate</span></div>
-      <div class="row"><span class="k">Gesamt, einmalig</span><span class="v">10.500 &euro;</span></div>
+      <div class="pb-num">10.500 &euro;<span class="pb-sub">gesamt, einmalig</span></div>
+      <div class="pb-line">3.500 &euro; pro Monat statt <span class="strike">4.000 &euro;</span> · 3 Monate</div>
     </div>
   </div>
   <p class="cta reveal"><b>Dein nächster Schritt:</b> Sag kurz Bescheid, dann legen wir los. Beim Buchversand starten wir sofort.</p>

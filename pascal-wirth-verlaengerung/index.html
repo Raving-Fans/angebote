@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700&display=swap" rel="stylesheet">
+<title>Pascal Wirth Verlängerung</title>
+<style>
+  :root{
+    --bg:#F5F6F2; --text:#211F1A; --muted:#514D46; --faint:#8A867D;
+    --card:#FFFFFF; --line:rgba(33,31,26,.08); --line-strong:rgba(33,31,26,.14);
+    --green:#407C11; --blue:#03328A; --grad:linear-gradient(30deg,#407C11,#03328A);
+    --shadow:0 1px 2px rgba(33,31,26,.04),0 8px 24px rgba(33,31,26,.05);
+    --display:"Josefin Sans",Georgia,serif;
+    --body:"Ubuntu",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --maxw:1120px;
+  }
+  :root[data-theme="dark"]{
+    --bg:#181A16; --text:#F1F0EA; --muted:#B4B1A7; --faint:#807D74;
+    --card:#22241F; --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    transition:background .3s ease,color .3s ease}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:28px;padding-right:28px}
+  .display{font-family:var(--display);font-style:italic;font-weight:700;letter-spacing:-.01em;line-height:1.02}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--display);font-style:italic;font-weight:700;font-size:24px}
+  .logo b{font-weight:700;font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-left:12px}
+  .toggle{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);
+    background:var(--card);color:var(--text);cursor:pointer;font-size:18px;line-height:1;
+    display:grid;place-items:center;transition:transform .2s ease,background .3s ease}
+  .toggle:hover{transform:rotate(20deg)}
+
+  section{padding:72px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);
+    font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .lead{color:var(--muted);font-size:21px;line-height:1.6;max-width:700px;margin-top:22px}
+  h1{font-size:clamp(44px,7.4vw,80px)}
+  h2{font-size:clamp(32px,4.4vw,46px)}
+  h2.display,h1.display{margin-top:18px}
+  .head-block{max-width:720px}
+
+  .hero{padding-top:76px;padding-bottom:16px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;color:var(--faint);
+    font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .meta span{display:inline-flex;align-items:center;gap:9px}
+  .meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);opacity:.8}
+
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+  .persp{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+  .persp.spotlight{border-color:color-mix(in srgb,var(--green) 45%,var(--line));
+    box-shadow:var(--shadow),0 0 0 1px color-mix(in srgb,var(--green) 25%,transparent) inset}
+  .persp .ic{font-size:28px}
+  .persp h3{font-size:22px;font-weight:700;margin:16px 0 10px;letter-spacing:-.01em}
+  .persp p{color:var(--muted);font-size:16px}
+  .persp .tag{display:inline-block;margin-top:18px;color:var(--faint);font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .persp.spotlight .tag{color:var(--green)}
+
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .mini{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+  .mini:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(33,31,26,.05),0 16px 36px rgba(33,31,26,.09)}
+  .mini .ic{font-size:24px}
+  .mini h3{font-size:18px;font-weight:700;margin:14px 0 8px;letter-spacing:-.01em}
+  .mini p{color:var(--muted);font-size:15px}
+  .mini .qt{font-style:italic;color:var(--text);font-size:15px;margin-top:8px}
+  .mini .draw{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity .2s ease;z-index:4}
+  .mini .draw rect{x:1px;y:1px;width:calc(100% - 2px);height:calc(100% - 2px);rx:17px;ry:17px;fill:none;
+    stroke:url(#rfgrad);stroke-width:1.8;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100}
+  .mini:hover .draw{opacity:1}
+  .mini:hover .draw rect{animation:drawborder .95s ease forwards}
+  @keyframes drawborder{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+  @media(prefers-reduced-motion:reduce){.mini:hover .draw rect{animation:none;stroke-dashoffset:0}}
+
+  .timeline{position:relative;margin-top:56px;padding-top:4px;padding-bottom:8px}
+  .timeline.slim{margin-top:40px;margin-bottom:8px}
+  .tl-line{position:absolute;top:13px;left:16.667%;right:16.667%;height:3px;background:var(--line-strong);border-radius:3px}
+  .tl-runner{position:absolute;top:13px;left:16.667%;width:18px;height:18px;border-radius:50%;
+    background:var(--grad);box-shadow:0 0 0 6px color-mix(in srgb,var(--green) 16%,transparent);
+    transform:translate(-50%,-50%);animation:tlrun 7s cubic-bezier(.65,0,.35,1) infinite}
+  @keyframes tlrun{0%,10%{left:16.667%}45%,52%{left:50%}88%,100%{left:83.333%}}
+  .tl-nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tl-phase{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .tl-dot{width:22px;height:22px;border-radius:50%;background:var(--card);border:3px solid var(--green);
+    position:relative;z-index:2;margin-bottom:22px;box-shadow:0 0 0 4px var(--bg)}
+  .tl-when{color:var(--faint);font-weight:700;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .tl-phase h3{font-size:19px;font-weight:700;margin:11px 0 8px;letter-spacing:-.01em}
+  .tl-phase p{color:var(--muted);font-size:14px;max-width:230px}
+  .tl-tag{margin-top:12px;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .tl-tag.wir{background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue)}
+  .tl-tag.gem{background:color-mix(in srgb,var(--green) 13%,transparent);color:var(--green)}
+  @media(prefers-reduced-motion:reduce){.tl-runner{animation:none;left:83.333%}}
+
+  .notebar{margin-top:20px;background:color-mix(in srgb,var(--blue) 7%,var(--card));
+    border:1px solid color-mix(in srgb,var(--blue) 22%,var(--line));border-radius:16px;padding:24px 26px;
+    display:flex;gap:16px;align-items:flex-start}
+  .notebar.good{background:color-mix(in srgb,var(--green) 8%,var(--card));border-color:color-mix(in srgb,var(--green) 26%,var(--line))}
+  .notebar .ic{font-size:22px;line-height:1.3}
+  .notebar p{color:var(--muted);font-size:15.5px}
+  .notebar b{color:var(--text)}
+  .notestack{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+  .notestack .notebar{margin-top:0}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+  .step .n{font-family:var(--display);font-style:italic;font-weight:700;font-size:40px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .step h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* Zwei-Wege-Karten */
+  .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px;align-items:stretch}
+  .opt{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line-strong);
+    border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+  .opt.spot{border-color:color-mix(in srgb,var(--green) 55%,var(--line));
+    box-shadow:var(--shadow),0 0 0 2px color-mix(in srgb,var(--green) 30%,transparent) inset}
+  .opt .rec{align-self:flex-start;background:var(--grad);color:#fff;font-weight:700;font-size:11.5px;
+    letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:16px}
+  .opt .kicker{color:var(--faint);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+  .opt h3{font-family:var(--display);font-style:italic;font-weight:700;font-size:30px;margin:8px 0 12px;line-height:1.05}
+  .opt .desc{color:var(--muted);font-size:16px}
+  .inc{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .inc li{position:relative;padding-left:28px;color:var(--muted);font-size:15.5px}
+  .inc li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+  .opt .price-tag{margin-top:26px;font-family:var(--display);font-style:italic;font-weight:700;font-size:44px;line-height:1}
+  .opt .price-tag span{font-family:var(--body);font-style:normal;font-weight:700;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:10px}
+  .opt .foot{margin-top:auto;padding-top:20px;color:var(--faint);font-weight:700;font-size:11.5px;
+    letter-spacing:.08em;text-transform:uppercase}
+  .opt .foot .sep{margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+
+  .cta{margin-top:26px;color:var(--muted);font-size:16px;max-width:660px}
+  .cta b{color:var(--text)}
+
+  .closing{text-align:center;padding:104px 28px 96px}
+  .closing .quote{font-family:var(--display);font-style:italic;font-weight:700;
+    font-size:clamp(28px,4.4vw,44px);line-height:1.15;max-width:900px;margin:0 auto;letter-spacing:-.01em}
+  .closing .mark{margin-top:34px;font-family:var(--display);font-style:italic;font-weight:700;font-size:20px;letter-spacing:.02em;color:var(--faint)}
+
+  .rule{height:1px;background:var(--line);border:0;max-width:var(--maxw);margin:0 auto}
+
+  html:not(.js-anim) .reveal{opacity:1;transform:none}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1 !important;transform:none !important;transition:none}}
+
+  @media(max-width:900px){
+    .grid4,.cols3,.tl-nodes,.steps{grid-template-columns:repeat(2,1fr)}
+    .grid2,.cols2,.opts{grid-template-columns:1fr}
+    .tl-line,.tl-runner{display:none}
+    section{padding:60px 0}
+  }
+  @media(max-width:540px){
+    body{font-size:16px}
+    .grid4,.cols3,.tl-nodes,.steps{grid-template-columns:1fr}
+    .wrap{padding-left:20px;padding-right:20px}
+    section{padding:50px 0}
+    .lead{font-size:19px}
+    .opt{padding:28px}
+  }
+</style>
+
+<script>document.documentElement.className+=' js-anim';</script>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="rfgrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#407C11"/><stop offset="100%" stop-color="#03328A"/></linearGradient></defs></svg>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo">Raving Fans.<b>x Pascal Wirth</b></div>
+    <button class="toggle" id="themeToggle" aria-label="Hell/Dunkel umschalten">☀︎</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap" aria-label="Einstieg">
+  <span class="eyebrow reveal">Rückblick und Ausblick</span>
+  <h1 class="display reveal">Der Sprint sitzt.<br><span class="grad">Jetzt wird Juli zur Regel.</span></h1>
+  <p class="lead reveal">Analyse gemacht, Systeme gebaut, erste Empfehlung da, Verlängern fühlt sich natürlich an. Jetzt geht es um das eine große Ziel: deinen stärksten Monat konstant machen und dich sauber auf Wachstum vorbereiten.</p>
+  <div class="meta reveal">
+    <span>Analyse + 4-Wochen-Sprint</span>
+    <span>NPS 10 von 10</span>
+    <span>Nächster Block ab September</span>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- RUECKBLICK -->
+<section class="wrap" aria-label="Rückblick">
+  <div class="head-block">
+    <span class="eyebrow reveal">Die letzten zwei Monate</span>
+    <h2 class="display reveal">Kurze Zeit, die viel bewegt hat.</h2>
+  </div>
+  <div class="grid4">
+    <div class="mini reveal"><div class="ic">💚</div><h3>Weiterempfehlung</h3><p class="qt">10 von 10, wie empfehlenswert die Zusammenarbeit ist.</p></div>
+    <div class="mini reveal"><div class="ic">🗣️</div><h3>Endlich Empfehlungen</h3><p class="qt">Eine ist da, die zweite kommt sicher.</p></div>
+    <div class="mini reveal"><div class="ic">🗨️</div><h3>Mehr Kundenfeedback</h3><p class="qt">Mehr positives Feedback in den Check-ins und zwischendurch.</p></div>
+    <div class="mini reveal"><div class="ic">🔁</div><h3>Verlängern ist leicht</h3><p class="qt">Fühlt sich gar nicht mehr strange an.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WAS DIR WICHTIG IST -->
+<section class="wrap" aria-label="Deine Themen">
+  <div class="head-block">
+    <span class="eyebrow reveal">Was dir wichtig ist</span>
+    <h2 class="display reveal">Wir haben genau zugehört.</h2>
+  </div>
+  <div class="grid4 cols3">
+    <div class="mini reveal"><div class="ic">🎯</div><h3>Persönlichkeit behalten</h3><p>Skalieren ohne Videokurs. Dein 1:1 bleibt 1:1.</p></div>
+    <div class="mini reveal"><div class="ic">🧠</div><h3>Erst beweisen, dann investieren</h3><p>Du gehst Schritte, wenn du sie dir selbst gezeigt hast.</p></div>
+    <div class="mini reveal"><div class="ic">💬</div><h3>LinkedIn bleibt dein Motor</h3><p>Fokus drauf, ohne dich verzetteln zu lassen.</p></div>
+    <div class="mini reveal"><div class="ic">🔒</div><h3>Abschlüsse konstant</h3><p>Deine Abschlussstärke von Ausnahme zu Normalfall.</p></div>
+    <div class="mini reveal"><div class="ic">🧩</div><h3>Struktur für beide Seiten</h3><p>Roadmap, Welcome-Package, Dankeskarten. Das bleibt.</p></div>
+    <div class="mini reveal"><div class="ic">🤝</div><h3>Anlaufstelle, kein Vollservice</h3><p>Sparring für die richtigen Entscheidungen.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WARUM JETZT -->
+<section class="wrap" aria-label="Warum jetzt">
+  <div class="head-block">
+    <span class="eyebrow reveal">Warum jetzt und nicht erst im November</span>
+    <h2 class="display reveal">Die Brückenmonate machst du nicht allein.</h2>
+    <p class="lead reveal">Dein Plan ist klar: erst Juli konstant machen, dann in Q4 jemanden für LinkedIn holen, in Q1 das Fulfillment strukturieren. Genau diese Phase ist der beste Moment für einen Partner daneben.</p>
+  </div>
+  <div class="notestack">
+    <div class="notebar good reveal"><div class="ic">🧭</div><p><b>Konstanz ist ein System, kein Zufall.</b> Deine Baustelle ist die Abschlussstärke, also genau das, was sich allein am schwersten stabil halten lässt. In den Wochen, in denen du dir Juli beweist, bringt ein Sparringspartner am meisten und kostet am wenigsten.</p></div>
+    <div class="notebar reveal"><div class="ic">🗓️</div><p><b>Die Hires passieren nicht von allein.</b> Das Hiring-Profil für LinkedIn in Q4 und die Fulfillment-Struktur in Q1 bereiten wir jetzt vor. So bremst du beim Einstellen nicht aus, sondern legst schon vorher die Gleise.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FAHRPLAN -->
+<section class="wrap" aria-label="Dein Fahrplan">
+  <div class="head-block">
+    <span class="eyebrow reveal">Dein Fahrplan</span>
+    <h2 class="display reveal">Dein Weg, nicht unser Kalender.</h2>
+  </div>
+  <div class="timeline slim">
+    <div class="tl-line"></div>
+    <div class="tl-runner"></div>
+    <div class="tl-nodes">
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Jetzt · Sep bis Okt</span><h3>Juli konstant machen</h3><p>Dranbleiben an dem, was funktioniert. Klarheit, welche Hebel jetzt zählen.</p><span class="tl-tag gem">Gemeinsam</span></div>
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Q4 · November</span><h3>LinkedIn verstärken</h3><p>Hiring-Profil und Onboarding für deine erste Kraft, wenn du dir die Konstanz bewiesen hast.</p><span class="tl-tag gem">Gemeinsam</span></div>
+      <div class="tl-phase reveal"><div class="tl-dot"></div><span class="tl-when">Q1</span><h3>Fulfillment strukturieren</h3><p>Systematisieren, bevor es voll wird. Ohne Videokurs, Persönlichkeit bleibt drin.</p><span class="tl-tag gem">Gemeinsam</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ZWEI WEGE -->
+<section class="wrap" aria-label="Zwei Wege">
+  <div class="head-block">
+    <span class="eyebrow reveal">Zwei Wege, weiterzumachen</span>
+    <h2 class="display reveal">Such dir das Tempo aus, das zu dir passt.</h2>
+    <p class="lead reveal">Beides ist Klarheit und Ausrichtung, kein Done-for-you. Du behältst dein Steuer und deinen LinkedIn-Fokus, wir sorgen als Wachstumspartner dafür, dass du an den richtigen Hebeln dranbleibst. Der Unterschied ist nur, wie eng wir dran sind.</p>
+  </div>
+  <div class="opts">
+
+    <div class="opt reveal">
+      <span class="kicker">Volles Tempo</span>
+      <h3>Weitermachen (Momentum)</h3>
+      <p class="desc">Für den Fall, dass du jetzt Gas geben willst. Enger Takt, wir bleiben wöchentlich an dir dran, halten dich am Ball und ziehen die richtigen Hebel mit dir, bis alles rund läuft.</p>
+      <ul class="inc">
+        <li>Wöchentlicher kurzer Check-In (Accountability)</li>
+        <li>Enger Draht für schnelle Klarheit und Entscheidungen</li>
+        <li>Jedes Quartal eine große Strategie-Session</li>
+        <li>Höheres Tempo beim Aufbau deiner Systeme</li>
+      </ul>
+      <div class="price-tag">2.500 &euro;<span>pro Monat</span></div>
+      <div class="foot"><div class="sep">3-Monats-Block, dann monatlich rollierend</div></div>
+    </div>
+
+    <div class="opt spot reveal">
+      <span class="rec">Unsere Empfehlung</span>
+      <span class="kicker">Dein Wachstumspartner</span>
+      <h3>Strategischer Partner</h3>
+      <p class="desc">Für deinen Modus: du beweist dir Juli selbst, mit der richtigen Anlaufstelle daneben. Wir schaffen Klarheit, halten dich an deinen wichtigsten Hebeln dran und bringen einen klaren Drei-Monats-Plan rein. Ruhig, aber verbindlich.</p>
+      <ul class="inc">
+        <li>1x im Monat eine längere Orientierungs-Session</li>
+        <li>1 kurzer Check-In dazwischen (Accountability)</li>
+        <li>Jedes Quartal eine große Strategie-Session</li>
+        <li>Anlaufstelle für die konkreten Entscheidungen</li>
+      </ul>
+      <div class="price-tag">1.500 &euro;<span>pro Monat</span></div>
+      <div class="foot"><div class="sep">3-Monats-Block, dann monatlich rollierend</div></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SO ARBEITEN WIR -->
+<section class="wrap" aria-label="So arbeiten wir">
+  <div class="head-block">
+    <span class="eyebrow reveal">So arbeiten wir</span>
+    <h2 class="display reveal">Beratung, die dich nicht ausbremst.</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="n">1</div><h3>Klar getaktete Calls</h3><p>Kurz, fokussiert, kein Zeitfresser.</p></div>
+    <div class="step reveal"><div class="n">2</div><h3>Du entscheidest</h3><p>Wir bringen Optionen und eine klare Empfehlung.</p></div>
+    <div class="step reveal"><div class="n">3</div><h3>Wir richten aus</h3><p>Drei-Monats-Plan, Prioritäten, blinde Flecken.</p></div>
+    <div class="step reveal"><div class="n">4</div><h3>Du setzt um, wir im Rücken</h3><p>Sparring statt Abgabe. Dein Stil bleibt deiner.</p></div>
+  </div>
+  <div class="notebar good reveal"><div class="ic">🌱</div><p><b>Wir sind dein Wachstumspartner.</b> Was auf LinkedIn zählt, kannst du selbst am besten. Unser Job ist es, dir Klarheit zu geben, dich an den richtigen Hebeln dranzuhalten und dafür zu sorgen, dass du fokussiert bleibst und die wichtigen Schritte zuerst gehst.</p></div>
+  <p class="cta reveal"><b>Dein nächster Schritt:</b> Sag mir einfach, welcher Weg sich richtig anfühlt, dann starten wir in den ersten Block. Wenn du unsicher bist, starten wir mit dem Partner-Weg und schauen nach dem ersten Monat, ob das Tempo passt.</p>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" aria-label="Abschluss">
+  <p class="quote reveal">Du hast dir Juli erarbeitet.<br>Jetzt machen wir daraus deinen Normalfall.</p>
+  <div class="mark reveal">Raving Fans. x Pascal Wirth</div>
+</section>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeToggle');
+    var saved=null; try{saved=localStorage.getItem('rf-theme');}catch(e){}
+    var mq=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)');
+    function apply(t){root.setAttribute('data-theme',t);btn.textContent=(t==='dark')?'☾':'☀︎';}
+    apply(saved||(mq&&mq.matches?'dark':'light'));
+    btn.addEventListener('click',function(){
+      var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+      apply(next);try{localStorage.setItem('rf-theme',next);}catch(e){}
+    });
+  })();
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    document.querySelectorAll('.mini').forEach(function(c){
+      var svg=document.createElementNS(NS,'svg');svg.setAttribute('class','draw');svg.setAttribute('aria-hidden','true');
+      var r=document.createElementNS(NS,'rect');r.setAttribute('pathLength','100');
+      svg.appendChild(r);c.appendChild(svg);
+    });
+  })();
+  (function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els=[].slice.call(document.querySelectorAll('.reveal'));
+    if(reduce||!('IntersectionObserver'in window)){
+      els.forEach(function(el){el.classList.add('in');});return;
+    }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var el=en.target;
+          var sibs=[].slice.call(el.parentNode.children).filter(function(n){return n.classList.contains('reveal');});
+          var idx=sibs.indexOf(el);
+          el.style.transitionDelay=(Math.max(idx,0)*80)+'ms';
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+
+</body>
+</html>

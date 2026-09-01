@@ -172,6 +172,19 @@
   .case__who { margin-top: auto; padding-top: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; color: var(--muted); }
   .warmline { margin-top: clamp(1.2rem,3vh,1.8rem); font-family: var(--font-title); font-weight: 600; font-style: italic; font-size: clamp(1.05rem, 1.9vw, 1.5rem); color: var(--grey); }
 
+  /* Herr Tech slide */
+  .htx { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.6rem,4vw,3rem); align-items: center; margin-top: clamp(1rem,2.5vh,1.6rem); }
+  .photoslot { position: relative; aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(150deg, rgba(126,224,32,0.16), rgba(45,138,249,0.16)); display: flex; align-items: center; justify-content: center; }
+  .photoslot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photoslot .ph { text-align: center; padding: 1.2rem; }
+  .photoslot .ph b { font-family: var(--font-title); font-style: italic; font-weight: 700; font-size: clamp(1.1rem,2.2vw,1.6rem); display: block; margin-bottom: 0.3rem; }
+  .photoslot .ph b .x { color: var(--muted); font-style: normal; font-weight: 400; }
+  .photoslot .ph span { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; }
+  .powerday { position: relative; margin-top: clamp(1.2rem,3vh,1.9rem); border-radius: 16px; padding: clamp(1rem,2.2vw,1.5rem) clamp(1.2rem,2.6vw,1.9rem); background: var(--ink-3); border: 1px solid transparent; }
+  .powerday::after { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1.5px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  .powerday b { font-family: var(--font-title); font-style: italic; font-weight: 700; font-size: clamp(1.1rem,2vw,1.5rem); }
+  .powerday span { display: block; margin-top: 0.3rem; color: var(--muted); font-weight: 500; font-size: clamp(0.9rem,1.2vw,1.02rem); }
+
   /* Plan */
   .biglist { display: flex; flex-direction: column; gap: clamp(0.9rem, 2.2vh, 1.4rem); margin-top: clamp(1.1rem,3vh,1.9rem); }
   .bl { display: flex; gap: clamp(1rem, 2.4vw, 1.8rem); align-items: baseline; }
@@ -189,7 +202,7 @@
     .qcards { grid-template-columns: 1fr; }
   }
   @media (max-width: 720px) {
-    .cols, .fw-layout, .cases { grid-template-columns: 1fr; }
+    .cols, .fw-layout, .cases, .htx { grid-template-columns: 1fr; }
     .statrow, .statrow.two { grid-template-columns: 1fr 1fr; }
     html { scroll-snap-type: none; }
     .node { font-size: 0.62rem; padding: 0.35rem 0.6rem; }
@@ -237,6 +250,26 @@
       <div class="reveal d2"><div class="st__num grad"><span data-target="84">0</span></div><div class="st__lab">Kundenreisen von innen analysiert</div></div>
       <div class="reveal d3"><div class="st__num grad"><span data-target="15378">0</span></div><div class="st__lab">Endkunden durch die Prozesse gelaufen</div></div>
       <div class="reveal d4"><div class="st__num grad"><span data-target="100" data-suffix="+">0</span></div><div class="st__lab">Coaches und Berater begleitet</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HERR TECH · WARUM ICH HIER BIN -->
+<section>
+  <div class="wrap">
+    <div class="label reveal">Kurzer Einblick, bevor es losgeht</div>
+    <div class="htx">
+      <div class="reveal d1">
+        <p class="title" style="font-size: clamp(1.6rem,3.4vw,2.6rem);">Kein Zufall, dass ich bei <span class="grad">Herr Tech</span> stehe.</p>
+        <p class="sub">Wir bauen mit Florian und dem KI-Marketing-Club genau das, worüber ich gleich rede. Die 1:1-Upsells, den Feedback- und Begeisterungs-Prozess, und gerade den KI Power Day.</p>
+        <div class="powerday reveal d2">
+          <b>KI Power Day · 17.10.</b>
+          <span>Ein Event mit Momenten, die man so von Events nicht kennt. Genau daran arbeiten wir gerade.</span>
+        </div>
+      </div>
+      <div class="photoslot reveal d2">
+        <div class="ph"><b>Herr Tech <span class="x">×</span> Raving Fans</b><span>Zusammenarbeit seit 2026</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -365,7 +398,7 @@
       <div class="trick reveal d4"><div class="trick__n">7</div><p>Kleine Überraschungen. Nie im Verkauf ankündigen, sonst werden sie Erwartung.</p></div>
       <div class="trick reveal d4"><div class="trick__n">8</div><p>Feedback-Kanal plus sofortiger Anruf, sobald die Zufriedenheit sinkt.</p></div>
     </div>
-    <p class="sub reveal d5">Einmal über KI und SOPs aufgesetzt, laufen die meisten automatisch mit. Kein Mehraufwand.</p>
+    <p class="sub reveal d5">Einmal über KI und SOPs aufgesetzt, laufen die meisten automatisch mit. Und genau solche Peak-Moments designen wir gerade für den KI Power Day am 17.10.</p>
   </div>
 </section>
 
@@ -448,6 +481,7 @@
     <div class="label reveal">Mein Ziel heute war einfach</div>
     <p class="lead reveal d1">Ein <span class="grad">Bewusstsein</span> bei dir wecken. Zufrieden ist für Anfänger.</p>
     <p class="sub reveal d2">Du hast jetzt die Hebel. Wenn du tiefer einsteigen willst, findest du mich auf raving-fans.de.</p>
+    <p class="sub reveal d3">Und wer diese Sorte Momente mal live erleben will: KI Power Day, 17.10. Der Link liegt im Chat.</p>
   </div>
 </section>
 

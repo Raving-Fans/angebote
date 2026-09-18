@@ -161,6 +161,9 @@
 </style>
 <style>
   html{scroll-snap-type:y proximity}
+  .g,.stat,.price .amount,.milestone .big{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .16em .12em 0;margin-right:-.16em}
+  .t-xl{line-height:1.08}.t-lg{line-height:1.12}
+  .t{overflow:visible}
   .req-wrap{margin-top:28px;overflow-x:auto;border:1px solid #16181A12;border-radius:18px;background:#fff;box-shadow:0 10px 40px #0b12200f}
   .req{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.4;min-width:720px}
   .req th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700;padding:14px 16px;border-bottom:1px solid #16181A12}
@@ -323,22 +326,22 @@
   <div class="inner">
     <p class="eyebrow">Eure Anforderungsanalyse</p>
     <h2 class="t t-lg">Alles umsetzbar. <span class="g">Punkt für Punkt.</span></h2>
-    <p class="lead">Wir haben jede Anforderung geprüft. Keine davon scheitert an der Technik. Einige Regeln klären wir vor dem Bau gemeinsam.</p>
+    <p class="lead">Wir haben jede Anforderung geprüft. Keine davon scheitert an der Technik. Was zum 1. Januar stehen muss, ist klar gesetzt. Den Rest bauen wir im Projekt, sobald wir die nötigen Einblicke und Regeln haben.</p>
     <div class="req-wrap">
       <table class="req">
-        <thead><tr><th>Nr.</th><th>Anforderung</th><th>Wann</th><th>Hinweis</th></tr></thead>
+        <thead><tr><th>Nr.</th><th>Anforderung</th><th>Priorität</th><th>Hinweis</th></tr></thead>
         <tbody>
-          <tr><td>1.1</td><td>Benutzer aus Entra ID anlegen und aktualisieren</td><td><span class="when w1">bis 1. Januar</span></td><td>Abteilung und Vorarbeiter über Entra-Gruppen</td></tr>
-          <tr><td>1.2</td><td>Benutzer bei Austritt löschen</td><td><span class="when w1">bis 1. Januar</span></td><td>Nachweise und Zertifikate bleiben in SharePoint erhalten</td></tr>
-          <tr><td>2.1</td><td>Zertifikat als PDF mit allen Modulen und Abschlussdaten</td><td><span class="when w1">bis 1. Januar</span></td><td>aus eurer Word-Vorlage</td></tr>
-          <tr><td>2.2</td><td>Versionierung bei nachträglich ergänzten Modulen</td><td><span class="when w2">Dezember</span></td><td>SharePoint versioniert nativ, die Regeln legen wir vorab fest</td></tr>
-          <tr><td>2.3</td><td>Zertifikat per Mail an den Mitarbeiter</td><td><span class="when w1">bis 1. Januar</span></td><td>ohne Kopie an Vorgesetzte</td></tr>
-          <tr><td>3.1</td><td>Zentrale Nachweisliste in SharePoint</td><td><span class="when w1">bis 1. Januar</span></td><td>die Datenbasis für alle Übersichten und Erinnerungen</td></tr>
-          <tr><td>3.2</td><td>Wiedervorlage nach 12 Monaten</td><td><span class="when w1">bis 1. Januar</span></td><td>inklusive Übernahme eurer bisherigen Schulungsdaten</td></tr>
-          <tr><td>4</td><td>Erinnerungen und Eskalation: 11 Monate, 14 Tage vorher, Ablauf, 4 Wochen danach täglich</td><td><span class="when w2">Dezember</span></td><td>live vor der ersten echten Fälligkeit</td></tr>
-          <tr><td>5.1</td><td>Übersicht für Vorarbeiter, nur eigene Abteilung</td><td><span class="when w2">Dezember</span></td><td>Empfehlung: eigener Bereich direkt in LearningSuite</td></tr>
-          <tr><td>5.2</td><td>Übersicht für die Personalabteilung</td><td><span class="when w1">bis 1. Januar</span></td><td>Ansichten und Filter in der SharePoint-Liste</td></tr>
-          <tr><td>6</td><td>Kursverwaltung, Kursliste in SharePoint</td><td><span class="when w1">bis 1. Januar</span></td><td>LearningSuite bleibt führend, Gültigkeitsdauer pflegt ihr in der Liste</td></tr>
+          <tr><td>1.1</td><td>Benutzer aus Entra ID anlegen und aktualisieren</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>Abteilung und Vorarbeiter über Entra-Gruppen</td></tr>
+          <tr><td>1.2</td><td>Benutzer bei Austritt löschen</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>Nachweise und Zertifikate bleiben in SharePoint erhalten</td></tr>
+          <tr><td>2.1</td><td>Zertifikat als PDF mit allen Modulen und Abschlussdaten</td><td><span class="when w2">im Projekt</span></td><td>Vorlage und Aufbau gestalten wir gemeinsam, Ziel: so früh wie möglich</td></tr>
+          <tr><td>2.2</td><td>Versionierung bei nachträglich ergänzten Modulen</td><td><span class="when w2">im Projekt</span></td><td>SharePoint versioniert nativ, die Regeln legen wir gemeinsam fest</td></tr>
+          <tr><td>2.3</td><td>Zertifikat per Mail an den Mitarbeiter</td><td><span class="when w2">im Projekt</span></td><td>sobald das Zertifikat steht, ohne Kopie an Vorgesetzte</td></tr>
+          <tr><td>3.1</td><td>Zentrale Nachweisliste in SharePoint</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>die Datenbasis für alle Übersichten und Erinnerungen</td></tr>
+          <tr><td>3.2</td><td>Wiedervorlage nach 12 Monaten</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>inklusive Übernahme eurer bisherigen Schulungsdaten</td></tr>
+          <tr><td>4</td><td>Erinnerungen und Eskalation: 11 Monate, 14 Tage vorher, Ablauf, 4 Wochen danach täglich</td><td><span class="when w2">im Projekt</span></td><td>steht, bevor die erste Schulung fällig wird</td></tr>
+          <tr><td>5.1</td><td>Übersicht für Vorarbeiter, nur eigene Abteilung</td><td><span class="when w2">im Projekt</span></td><td>Empfehlung: eigener Bereich direkt in LearningSuite</td></tr>
+          <tr><td>5.2</td><td>Übersicht für die Personalabteilung</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>Ansichten und Filter in der SharePoint-Liste</td></tr>
+          <tr><td>6</td><td>Kursverwaltung, Kursliste in SharePoint</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>LearningSuite bleibt führend, Gültigkeitsdauer pflegt ihr in der Liste</td></tr>
         </tbody>
       </table>
     </div>
@@ -427,7 +430,7 @@
     <div class="milestone"><span class="big">1. Januar 2027</span><p>Alle Mitarbeiter sind angelegt, informiert und sehen ihre Unterweisungen. Ihr seht jederzeit, wer erledigt hat. Rhythmus bis dahin: Sprint-Calls alle 2 Wochen, auf Wunsch wöchentlich.</p></div>
     <div class="prio">
       <div class="card green"><h3>Muss zum Stichtag stehen</h3><p style="color:var(--ink)">Nutzer angelegt und zugeordnet, Kurse freigeschaltet, alle informiert, nachvollziehbar wer abgeschlossen hat.</p></div>
-      <div class="card"><h3>Kommt direkt danach, falls es eng wird</h3><p>Versionierung und Vorarbeiter-Übersicht. Die Erinnerungen stehen spätestens, bevor die erste Schulung fällig wird.</p></div>
+      <div class="card"><h3>Entsteht im Projekt</h3><p>Zertifikate, Versionierung, Erinnerungs- und Eskalationsstufen, Vorarbeiter-Übersicht. Hier brauchen wir eure Regeln und Einblicke aus den ersten Wochen. Die Erinnerungen stehen, bevor die erste Schulung fällig wird.</p></div>
     </div>
   </div>
 </section>
@@ -463,22 +466,24 @@
           <li>Audit aus drei Perspektiven und Strategie Session mit 3-Monats-Roadmap</li>
           <li>Einrichtung von n8n auf eurem Server oder in der Cloud</li>
           <li>Alle Punkte eurer Anforderungsanalyse (1 bis 6), inklusive Kursverwaltung</li>
+          <li>Garantie auf das Pflichtprogramm zum 1. Januar (es gelten Garantiebedingungen)</li>
           <li>Struktur in LearningSuite: Mitgliedereigenschaften, Kurse, Freischaltungen, Prüfungsmodule</li>
           <li>Entra ID Abgleich inklusive Übernahme der bisherigen Unterweisungsdaten</li>
           <li>Zertifikate mit Word-Vorlage, versioniert in SharePoint, per Mail und in LearningSuite</li>
           <li>Nachweisliste, Erinnerungs- und Eskalationsstufen, Übersichten für Vorarbeiter und Personalabteilung</li>
           <li>Sprint-Calls alle 2 Wochen, Übergabe mit Doku, Review nach 3 Monaten</li>
         </ul>
+        <p class="notin"><b>Pflichtprogramm zum 1. Januar:</b> Alle Mitarbeiter sind aus Entra ID angelegt und ihren Abteilungen zugeordnet, die Kurse sind freigeschaltet, alle wurden informiert, und in der Nachweisliste ist sichtbar, wer abgeschlossen hat.</p>
         <p class="notin"><b>Nicht drin:</b> die Inhalte der Unterweisungen und die Prüfungsfragen, die liefert ihr. Lizenzen für LearningSuite, n8n, Server und Microsoft laufen direkt über euch.</p>
       </div>
       <div class="price">
         <span class="tag" style="align-self:flex-start">3-Monats-Paket · Done for you</span>
         <div><div class="amount">4.000 €</div><div class="per">netto pro Monat</div></div>
-        <div class="sub">3 Monate, 12.000 € netto gesamt · monatliche Abrechnung · Start 1. Oktober 2026</div>
+        <div class="sub">3 Monate · monatliche Abrechnung · Start spätestens 1. Oktober 2026</div>
         <hr>
         <div class="goal"><b>Ziel nach 3 Monaten</b><p>Die Sicherheitsunterweisung läuft über LearningSuite. Nutzer, Kurse, Prüfungen, Zertifikate, Nachweise und Erinnerungen laufen automatisch. Personalabteilung und Vorarbeiter sehen jederzeit den Stand.</p></div>
         <hr>
-        <div class="sub"><b style="color:var(--inv)">Planungssicherheit:</b> Das Ziel ist klar, der Preis steht. Brauchen wir länger als eingeschätzt, ist das unser Thema, nicht eure Rechnung.</div>
+        <div class="sub"><b style="color:var(--bright)">Unsere Garantie:</b> Steht das Pflichtprogramm am 1. Januar 2027 nicht, arbeiten wir ohne Rechnung weiter, bis es steht. Es gelten unsere Garantiebedingungen.</div>
         <div class="sub"><b style="color:var(--inv)">Danach:</b> Wir planen gemeinsam die nächsten 3 Monate. Die Zusammenarbeit läuft in 3-Monats-Zyklen weiter, solange keiner sagt, dass wir aufhören. Kündigung jederzeit bis 2 Wochen vor Ende eines Zyklus per E-Mail.</div>
       </div>
     </div>
@@ -509,7 +514,7 @@
         <div class="glass"><div class="num">1</div><h3>Erledigt ✓</h3><p style="color:#fff;opacity:.85">Eure Anforderungsanalyse ist da und eingearbeitet.</p></div>
         <div class="glass"><div class="num">2</div><h3>Montag, 21.09., 10 Uhr</h3><p style="color:#fff;opacity:.85">Ihr stellt das Angebot in eurer Runde zur Wissensdatenbank mit der Geschäftsleitung vor.</p></div>
         <div class="glass"><div class="num">3</div><h3>Donnerstag, 24.09., 11 Uhr</h3><p style="color:#fff;opacity:.85">Kurzer Call: offene Fragen klären, entscheiden, Start planen.</p></div>
-        <div class="glass"><div class="num">4</div><h3>1. Oktober</h3><p style="color:#fff;opacity:.85">Start mit dem Audit. Dann läuft die Uhr Richtung Jahreswechsel.</p></div>
+        <div class="glass"><div class="num">4</div><h3>Spätestens 1. Oktober</h3><p style="color:#fff;opacity:.85">Kick-off und Start mit dem Audit. Passt es euch früher, starten wir gern früher.</p></div>
       </div>
     </div>
     <p class="quote">Am 1. Januar steht keine Liste mit Folien. Sondern ein System, das läuft.</p>

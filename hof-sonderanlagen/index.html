@@ -164,6 +164,21 @@
   .g,.stat,.price .amount,.milestone .big{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .16em .12em 0;margin-right:-.16em}
   .t-xl{line-height:1.08}.t-lg{line-height:1.12}
   .t{overflow:visible}
+  .w3{background:#F1F0EA;color:var(--muted)}
+  .prio.prio3{grid-template-columns:repeat(3,1fr)}
+  .person img{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;margin-bottom:14px;border:3px solid #fff;box-shadow:0 6px 18px rgba(11,18,32,.15)}
+  .guarantee{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--navy);color:var(--inv);border-radius:22px;padding:26px 30px;position:relative;overflow:hidden}
+  .guarantee::after{content:"";position:absolute;width:300px;height:300px;left:-120px;bottom:-160px;border-radius:50%;background:rgba(126,224,32,.16);filter:blur(60px)}
+  .guarantee > *{position:relative;z-index:1}
+  .guarantee .g-head{display:flex;flex-direction:column;gap:4px}
+  .guarantee .big{font-family:"Josefin Sans",sans-serif;font-style:italic;font-weight:700;font-size:36px;line-height:1.1;background:var(--grad-bright);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .16em .12em 0}
+  .guarantee .g-date{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--invmuted)}
+  .guarantee .g-claim{margin:0 0 12px;font-size:17px;line-height:1.45;font-weight:700;color:var(--inv)}
+  .guarantee .g-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .guarantee .g-list li{font-size:13.5px;padding:6px 12px;border-radius:999px;background:#FFFFFF12;border:1px solid #FFFFFF22;color:var(--inv)}
+  .guarantee .g-small{margin:12px 0 0;font-size:13px;color:var(--invmuted)}
+  @media (max-width:1024px){.prio.prio3{grid-template-columns:1fr}}
+  @media (max-width:720px){.guarantee{grid-template-columns:1fr;gap:14px}}
   .req-wrap{margin-top:28px;overflow-x:auto;border:1px solid #16181A12;border-radius:18px;background:#fff;box-shadow:0 10px 40px #0b12200f}
   .req{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.4;min-width:720px}
   .req th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700;padding:14px 16px;border-bottom:1px solid #16181A12}
@@ -227,11 +242,10 @@
     <div>
       <p class="eyebrow">HOF Sonderanlagenbau · nach unserem Gespräch am 18.09.2026</p>
       <h1 class="t t-xl">Ab 1. Januar läuft eure Unterweisung <span class="g">digital.</span></h1>
-      <p class="lead">Danke für das offene Gespräch. Hier ist alles an einem Ort: was wir mitgenommen haben, wie das System funktioniert, wie wir es bis zum Jahreswechsel aufbauen und was es kostet. Eure Anforderungsanalyse ist Punkt für Punkt eingearbeitet.</p>
+      <p class="lead">Danke für das offene Gespräch. Auf dieser Seite steht, was wir mitgenommen haben, wie wir es bauen und was es kostet. Eure Anforderungsanalyse ist schon eingearbeitet.</p>
       <ul class="ticks">
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Nachweisbar.</li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Automatisch.</li>
-        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>In eurer Microsoft-Welt.</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Nutzer kommen aus Entra ID</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Nachweise liegen in SharePoint</li>
       </ul>
     </div>
     <div class="result">
@@ -259,7 +273,7 @@
       <div class="glass"><div class="num">01</div><h3>Stichtag Jahreswechsel</h3><p>Die Geschäftsführung will, dass die Mitarbeiter ab Anfang 2027 die Sicherheitsunterweisung über LearningSuite machen. Die Grundstruktur muss bis dahin stehen.</p></div>
       <div class="glass"><div class="num">02</div><h3>Rund 120 Unterweisungen</h3><p>Jede Betriebsunterweisung ist ein eigenes Modul. Eure Mapping-Tabelle ordnet sie 22 Abteilungen zu. Daraus werden ein allgemeiner Kurs für alle plus Abteilungskurse, zusammen rund 20 bis 30.</p></div>
       <div class="glass"><div class="num">03</div><h3>Heute: Unterschrift auf Papier</h3><p>Fälligkeiten stehen in Listen. Künftig gibt es pro Kurs eine Prüfung, die jährlich wiederholt wird. Das Zertifikat gilt ein Jahr.</p></div>
-      <div class="glass"><div class="num">04</div><h3>Microsoft bleibt das Zuhause</h3><p>Mitarbeiter werden in Microsoft angelegt, oft schon vor dem ersten Arbeitstag. Zertifikate gehören nach SharePoint, die Vorlage am liebsten in Word.</p></div>
+      <div class="glass"><div class="num">04</div><h3>Alles bleibt in Microsoft</h3><p>Mitarbeiter werden in Microsoft angelegt, oft schon vor dem ersten Arbeitstag. Zertifikate gehören nach SharePoint, die Vorlage am liebsten in Word.</p></div>
       <div class="glass"><div class="num">05</div><h3>Bisherige Daten zählen</h3><p>Wer seine letzte Unterweisung im April gemacht hat, soll auch erst im April wieder dran sein. Die bisherigen Daten übernehmen wir.</p></div>
       <div class="glass"><div class="num">06</div><h3>Inhalte entstehen parallel</h3><p>Etwa ein Drittel der Module steht. Das ist kein Hindernis: Wir legen die Kurse früh an, bauen die Automationen und ihr füllt die Module nach und nach.</p></div>
     </div>
@@ -271,12 +285,12 @@
   <div class="inner split">
     <div>
       <p class="eyebrow">So funktioniert es</p>
-      <h2 class="t t-lg">Ein Kreislauf, der <span class="g">von allein läuft.</span></h2>
-      <p class="lead" style="margin-bottom:24px">Jedes Jahr, für jeden Mitarbeiter. Ohne Excel-Liste und ohne manuelles Anlegen.</p>
+      <h2 class="t t-lg">So läuft eine Unterweisung <span class="g">künftig ab.</span></h2>
+      <p class="lead" style="margin-bottom:24px">Einmal aufgesetzt, wiederholt sich das jedes Jahr für jeden Mitarbeiter. Die Excel-Liste braucht ihr dann nicht mehr.</p>
       <ol class="steps">
         <li><span class="k">1</span><div><b>Angelegt in Entra ID, angelegt in LearningSuite</b><span>Abteilung und Vorarbeiter über Entra-Gruppen, Änderungen und Austritte laufen automatisch mit</span></div></li>
         <li><span class="k">2</span><div><b>Die richtigen Kurse sind freigeschaltet</b><span>allgemeine Unterweisung plus der Kurs der eigenen Abteilung, Büro-Dokumente nur fürs Büro</span></div></li>
-        <li><span class="k">3</span><div><b>Kurs abgeschlossen, Zertifikat da</b><span>mit allen Modulen und Abschlussdaten, versioniert in SharePoint, per Mail an den Mitarbeiter</span></div></li>
+        <li><span class="k">3</span><div><b>Kurs abgeschlossen, Zertifikat da</b><span>mit allen Modulen und Abschlussdaten, abgelegt in SharePoint, per Mail an den Mitarbeiter</span></div></li>
         <li><span class="k">4</span><div><b>Alles steht in der Nachweisliste</b><span>die Personalabteilung sieht alles, Vorarbeiter nur ihre Abteilung</span></div></li>
         <li><span class="k">5</span><div><b>Erinnern und eskalieren</b><span>nach 11 Monaten, 14 Tage vor Ablauf, am Ablaufdatum, danach mit Abteilungsleitung</span></div></li>
       </ol>
@@ -303,8 +317,8 @@
 <section class="slide dark">
   <div class="inner split">
     <div>
-      <p class="eyebrow">Was eure Leute davon merken</p>
-      <h2 class="t t-lg">Keiner muss suchen. <span class="g">Keiner muss nachhaken.</span></h2>
+      <p class="eyebrow">Im Alltag</p>
+      <h2 class="t t-lg">Was eure Mitarbeiter und Vorarbeiter <span class="g">davon merken.</span></h2>
       <ul class="checks">
         <li>Zum Start bekommt jeder Mitarbeiter eine Nachricht: neue Plattform, hier anmelden, das sind deine Unterweisungen für dieses Jahr.</li>
         <li>Nach der bestandenen Prüfung gratuliert ein Pop-up und nennt das nächste Prüfungsdatum.</li>
@@ -325,8 +339,8 @@
 <section class="slide white">
   <div class="inner">
     <p class="eyebrow">Eure Anforderungsanalyse</p>
-    <h2 class="t t-lg">Alles umsetzbar. <span class="g">Punkt für Punkt.</span></h2>
-    <p class="lead">Wir haben jede Anforderung geprüft. Keine davon scheitert an der Technik. Was zum 1. Januar stehen muss, ist klar gesetzt. Den Rest bauen wir im Projekt, sobald wir die nötigen Einblicke und Regeln haben.</p>
+    <h2 class="t t-lg">Eure Analyse geht deutlich weiter <span class="g">als unser Gespräch.</span></h2>
+    <p class="lead">Mit der Anforderungsanalyse ist einiges dazugekommen, zum Beispiel die Eskalationsstufen und die Versionierung der Zertifikate. Das Projekt wird dadurch größer. Ehrlich gesagt auch spannender. Technisch ist jeder Punkt machbar. Damit der 1. Januar hält, haben wir priorisiert.</p>
     <div class="req-wrap">
       <table class="req">
         <thead><tr><th>Nr.</th><th>Anforderung</th><th>Priorität</th><th>Hinweis</th></tr></thead>
@@ -334,9 +348,9 @@
           <tr><td>1.1</td><td>Benutzer aus Entra ID anlegen und aktualisieren</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>Abteilung und Vorarbeiter über Entra-Gruppen</td></tr>
           <tr><td>1.2</td><td>Benutzer bei Austritt löschen</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>Nachweise und Zertifikate bleiben in SharePoint erhalten</td></tr>
           <tr><td>2.1</td><td>Zertifikat als PDF mit allen Modulen und Abschlussdaten</td><td><span class="when w2">im Projekt</span></td><td>Vorlage und Aufbau gestalten wir gemeinsam, Ziel: so früh wie möglich</td></tr>
-          <tr><td>2.2</td><td>Versionierung bei nachträglich ergänzten Modulen</td><td><span class="when w2">im Projekt</span></td><td>SharePoint versioniert nativ, die Regeln legen wir gemeinsam fest</td></tr>
+          <tr><td>2.2</td><td>Versionierung bei nachträglich ergänzten Modulen</td><td><span class="when w3">danach</span></td><td>SharePoint kann Versionen von Haus aus, die Regeln legen wir im Projekt fest</td></tr>
           <tr><td>2.3</td><td>Zertifikat per Mail an den Mitarbeiter</td><td><span class="when w2">im Projekt</span></td><td>sobald das Zertifikat steht, ohne Kopie an Vorgesetzte</td></tr>
-          <tr><td>3.1</td><td>Zentrale Nachweisliste in SharePoint</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>die Datenbasis für alle Übersichten und Erinnerungen</td></tr>
+          <tr><td>3.1</td><td>Zentrale Nachweisliste in SharePoint</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>wird die Datenbank für Status, Fälligkeiten und Eskalationen</td></tr>
           <tr><td>3.2</td><td>Wiedervorlage nach 12 Monaten</td><td><span class="when w1">Muss zum 1. Januar</span></td><td>inklusive Übernahme eurer bisherigen Schulungsdaten</td></tr>
           <tr><td>4</td><td>Erinnerungen und Eskalation: 11 Monate, 14 Tage vorher, Ablauf, 4 Wochen danach täglich</td><td><span class="when w2">im Projekt</span></td><td>steht, bevor die erste Schulung fällig wird</td></tr>
           <tr><td>5.1</td><td>Übersicht für Vorarbeiter, nur eigene Abteilung</td><td><span class="when w2">im Projekt</span></td><td>Empfehlung: eigener Bereich direkt in LearningSuite</td></tr>
@@ -345,7 +359,7 @@
         </tbody>
       </table>
     </div>
-    <div class="hint"><span>📋</span><div><b>Klären wir in der Strategie Session:</b> Was passiert mit Fälligkeit und Zertifikat, wenn ein Kurs neue Module bekommt? Zertifikat pro Kurs oder auch pro Modul? Woher kommen Abteilungs- und Fachbereichsleitung für die Eskalation? Welcher Text zu den Folgen gilt im Karenzmonat? Wie lange werden Nachweise nach einem Austritt aufbewahrt?</div></div>
+    <div class="hint"><span>📋</span><div><b>Offene Regeln, die wir in der Strategie Session klären:</b> Was passiert mit Fälligkeit und Zertifikat, wenn ein Kurs neue Module bekommt? Gibt es ein Zertifikat pro Kurs oder auch pro Modul? Woher kommen Abteilungs- und Fachbereichsleitung für die Eskalation? Welcher Text gilt im Karenzmonat? Wie lange bleiben Nachweise nach einem Austritt gespeichert?</div></div>
   </div>
 </section>
 
@@ -353,15 +367,15 @@
 <section class="slide white">
   <div class="inner">
     <p class="eyebrow">Die Technik dahinter</p>
-    <h2 class="t t-lg">Alles läuft bei euch. <span class="g">Nichts bindet euch an uns.</span></h2>
-    <p class="lead">Für die Automationen empfehlen wir n8n. Wir richten es ein, ihr behaltet die Kontrolle.</p>
+    <h2 class="t t-lg">n8n statt <span class="g">Power Automate.</span></h2>
+    <p class="lead">In eurer Analyse steht Power Automate. Wir setzen stattdessen n8n ein. Wir richten es auf eurem Server ein und begleiten die Einführung, bis jemand bei euch es selbst bedienen kann.</p>
     <div class="grid c4" style="margin-top:34px">
       <div class="card"><div class="num">01</div><h3>Auf eurem Server</h3><p>n8n kann bei euch selbst laufen oder in der Cloud. Was sinnvoller ist, entscheiden wir gemeinsam mit eurer IT.</p></div>
-      <div class="card"><div class="num">02</div><h3>Datenschutz sauber</h3><p>Die Daten bleiben in eurer Infrastruktur. Lizenzen und Zugänge laufen auf euch, nie auf uns.</p></div>
+      <div class="card"><div class="num">02</div><h3>Lizenzen laufen auf euch</h3><p>Die Daten bleiben in eurer Infrastruktur. Zugänge und Lizenzen laufen auf HOF, nicht auf uns.</p></div>
       <div class="card"><div class="num">03</div><h3>Günstig im Betrieb</h3><p>Selbst betrieben ist n8n in der Regel günstiger als Make oder Power Automate.</p></div>
       <div class="card"><div class="num">04</div><h3>Fertige Anbindungen</h3><p>Für LearningSuite gibt es eine von n8n verifizierte Integration, dazu Bausteine für Entra ID, SharePoint, Outlook und Teams.</p></div>
     </div>
-    <div class="hint"><span>ℹ️</span><div><b>Power Automate steht in eurer Analyse.</b> Unsere Empfehlung bleibt n8n: Für LearningSuite gibt es in Power Automate keine fertige Anbindung, jede Verbindung müsste über eigene Schnittstellen laufen, die dort Premium-Lizenzen brauchen. Die Entscheidung treffen wir gemeinsam mit eurer IT in der Strategie Session.</div></div>
+    <div class="hint"><span>ℹ️</span><div><b>Warum nicht Power Automate?</b> Für LearningSuite gibt es dort keine fertige Anbindung. Jede Verbindung müsste über eigene Schnittstellen laufen, und die brauchen in Power Automate Premium-Lizenzen. Ob die Nutzerdaten aus Entra ID oder aus eurem lokalen AD kommen, klären wir mit eurer IT.</div></div>
   </div>
 </section>
 
@@ -370,7 +384,7 @@
   <div class="inner split">
     <div>
       <p class="eyebrow">Was wir schon gebaut haben</p>
-      <h2 class="t t-lg">Nicht zum ersten Mal. <span class="g">Auch mit SharePoint.</span></h2>
+      <h2 class="t t-lg">So ähnlich haben wir das <span class="g">schon gebaut.</span></h2>
       <p class="lead">Die Zertifikats-Automation ist technisch ein Muster, das wir oft gebaut haben. Nur der Auslöser ist jeweils ein anderer.</p>
       <ul class="checks">
         <li>Bei einem Kunden mit SharePoint erstellt n8n Rechnungen aus einer Vorlage, befüllt sie individuell und verschickt sie direkt.</li>
@@ -389,13 +403,13 @@
 <!-- 7 3-Monats-Plan -->
 <section class="slide white">
   <div class="inner">
-    <p class="eyebrow">Der Plan bis zum Jahreswechsel</p>
-    <h2 class="t t-lg">3 Monate. <span class="g">Ein klares Ziel.</span></h2>
+    <p class="eyebrow">Der Plan</p>
+    <h2 class="t t-lg">Oktober bis Dezember, <span class="g">Ziel 1. Januar.</span></h2>
     <p class="lead">Die Details legen wir in der Strategie Session fest. Eure Anforderungsanalyse fließt direkt ein.</p>
     <div class="months">
       <div class="card month">
         <div class="card-h"><span class="mn">Oktober</span><span class="tag">Fundament</span></div>
-        <p>Analyse, Plan und Grundstruktur.</p>
+        <p>Wir lernen euer System kennen und legen die Grundstruktur an.</p>
         <ul>
           <li>Audit aus drei Perspektiven: Führung, IT, Mitarbeiter</li>
           <li>Strategie Session mit Roadmap für die 3 Monate</li>
@@ -406,7 +420,7 @@
       </div>
       <div class="card month">
         <div class="card-h"><span class="mn">November</span><span class="tag">Automationen</span></div>
-        <p>Die Maschine im Hintergrund.</p>
+        <p>Die Automationen entstehen.</p>
         <ul>
           <li>Entra ID Abgleich: anlegen, aktualisieren, bei Austritt löschen</li>
           <li>Bisherige Unterweisungsdaten übernehmen, Wiedervorlage berechnen</li>
@@ -417,10 +431,10 @@
       </div>
       <div class="card month">
         <div class="card-h"><span class="mn">Dezember</span><span class="tag">Rollout</span></div>
-        <p>Testen, übergeben, starten.</p>
+        <p>Pilotgruppe testet, der Start wird vorbereitet.</p>
         <ul>
           <li>Erinnerungs- und Eskalationsstufen mit Status-Logik</li>
-          <li>Zertifikats-Versionierung und Übersicht für Vorarbeiter</li>
+          <li>Übersicht für Vorarbeiter</li>
           <li>Testlauf mit einer Pilotgruppe</li>
           <li>Start-Nachricht an alle Mitarbeiter vorbereiten</li>
           <li>Übergabe, Doku und Review</li>
@@ -428,9 +442,10 @@
       </div>
     </div>
     <div class="milestone"><span class="big">1. Januar 2027</span><p>Alle Mitarbeiter sind angelegt, informiert und sehen ihre Unterweisungen. Ihr seht jederzeit, wer erledigt hat. Rhythmus bis dahin: Sprint-Calls alle 2 Wochen, auf Wunsch wöchentlich.</p></div>
-    <div class="prio">
-      <div class="card green"><h3>Muss zum Stichtag stehen</h3><p style="color:var(--ink)">Nutzer angelegt und zugeordnet, Kurse freigeschaltet, alle informiert, nachvollziehbar wer abgeschlossen hat.</p></div>
-      <div class="card"><h3>Entsteht im Projekt</h3><p>Zertifikate, Versionierung, Erinnerungs- und Eskalationsstufen, Vorarbeiter-Übersicht. Hier brauchen wir eure Regeln und Einblicke aus den ersten Wochen. Die Erinnerungen stehen, bevor die erste Schulung fällig wird.</p></div>
+    <div class="prio prio3">
+      <div class="card green"><h3>Muss zum 1. Januar</h3><p style="color:var(--ink)">Nutzer aus Entra ID, Abteilungen, Kurse, Info an alle, Nachweisliste, Übersicht für die Personalabteilung.</p></div>
+      <div class="card"><h3>Entsteht im Projekt</h3><p>Zertifikate, Erinnerungen und Eskalation, Übersicht für Vorarbeiter. Hier brauchen wir eure Regeln und die Einblicke aus den ersten Wochen.</p></div>
+      <div class="card"><h3>Danach</h3><p>Versionierung der Zertifikate. Die wird erst wichtig, wenn Kurse nachträglich neue Module bekommen.</p></div>
     </div>
   </div>
 </section>
@@ -439,17 +454,17 @@
 <section class="slide paper">
   <div class="inner">
     <p class="eyebrow">So arbeiten wir zusammen</p>
-    <h2 class="t t-lg">Zu dritt an eurer Seite. <span class="g">Done for you.</span></h2>
+    <h2 class="t t-lg">Wer bei euch <span class="g">mitarbeitet.</span></h2>
     <div class="team">
-      <div class="card"><div class="role">Strategie</div><h3>Timon Leu</h3><p>Führt Audit und Strategie Session, behält die Richtung im Blick, arbeitet bei komplexer Technik mit. Mindestens einmal im Monat im Call.</p></div>
-      <div class="card"><div class="role">Projektleitung</div><h3>Anna Richter</h3><p>Organisation, Kommunikation und die regelmäßigen Sprint-Calls. Kommt aus Recruiting und Personal und hat im Schulungsbereich der Versicherungskammer Bayern gearbeitet.</p></div>
-      <div class="card"><div class="role">Technik</div><h3>Manuel Rocholl</h3><p>Setzt die Automationen und KI-Themen technisch um, von n8n bis LearningSuite.</p></div>
+      <div class="card person"><img src="img/timon.jpg" alt="Timon Leu"><div class="role">Strategie</div><h3>Timon Leu</h3><p>Führt Audit und Strategie Session, behält die Richtung im Blick, arbeitet bei komplexer Technik mit. Mindestens einmal im Monat im Call.</p></div>
+      <div class="card person"><img src="img/anna.jpg" alt="Anna Richter"><div class="role">Projektleitung</div><h3>Anna Richter</h3><p>Organisation, Kommunikation und die regelmäßigen Sprint-Calls. Kommt aus Recruiting und Personal und hat im Schulungsbereich der Versicherungskammer Bayern gearbeitet.</p></div>
+      <div class="card person"><img src="img/manuel.jpg" alt="Manuel Rocholl"><div class="role">Technik</div><h3>Manuel Rocholl</h3><p>Setzt die Automationen und KI-Themen technisch um, von n8n bis LearningSuite.</p></div>
     </div>
     <div class="principles">
       <div class="card"><h3>Wir bauen, ihr prüft</h3><p>Kurse anlegen, Automationen, Vorlagen: das übernehmen wir.</p></div>
       <div class="card"><h3>Ihr bleibt im Loop</h3><p>In jedem Sprint zeigen wir, was gebaut wurde und wie es funktioniert.</p></div>
       <div class="card"><h3>Wissen bleibt bei euch</h3><p>Mindestens eine Person bei euch versteht das System.</p></div>
-      <div class="card"><h3>Ehrliches Review</h3><p>Nach 3 Monaten: was lief gut, was nicht, was kommt als Nächstes.</p></div>
+      <div class="card"><h3>Ehrliches Review</h3><p>Nach 3 Monaten schauen wir gemeinsam drauf, was gut lief und wo es gehakt hat.</p></div>
     </div>
   </div>
 </section>
@@ -458,22 +473,21 @@
 <section class="slide white" id="angebot">
   <div class="inner">
     <p class="eyebrow">Euer Angebot</p>
-    <h2 class="t t-lg">Aufbau bis zum Jahreswechsel. <span class="g">Zum festen Preis.</span></h2>
+    <h2 class="t t-lg">Die ersten <span class="g">3 Monate.</span></h2>
     <div class="offer">
       <div class="card">
         <h3>Das ist drin</h3>
         <ul class="checks">
           <li>Audit aus drei Perspektiven und Strategie Session mit 3-Monats-Roadmap</li>
-          <li>Einrichtung von n8n auf eurem Server oder in der Cloud</li>
-          <li>Alle Punkte eurer Anforderungsanalyse (1 bis 6), inklusive Kursverwaltung</li>
+          <li>Einführung von n8n: Einrichtung auf eurem Server und Einweisung eures Teams</li>
+          <li>Eure Anforderungsanalyse, priorisiert wie oben. Die Versionierung der Zertifikate planen wir für den nächsten Zyklus.</li>
           <li>Garantie auf das Pflichtprogramm zum 1. Januar (es gelten Garantiebedingungen)</li>
           <li>Struktur in LearningSuite: Mitgliedereigenschaften, Kurse, Freischaltungen, Prüfungsmodule</li>
           <li>Entra ID Abgleich inklusive Übernahme der bisherigen Unterweisungsdaten</li>
-          <li>Zertifikate mit Word-Vorlage, versioniert in SharePoint, per Mail und in LearningSuite</li>
+          <li>Zertifikate mit Word-Vorlage, abgelegt in SharePoint, per Mail und in LearningSuite</li>
           <li>Nachweisliste, Erinnerungs- und Eskalationsstufen, Übersichten für Vorarbeiter und Personalabteilung</li>
           <li>Sprint-Calls alle 2 Wochen, Übergabe mit Doku, Review nach 3 Monaten</li>
         </ul>
-        <p class="notin"><b>Pflichtprogramm zum 1. Januar:</b> Alle Mitarbeiter sind aus Entra ID angelegt und ihren Abteilungen zugeordnet, die Kurse sind freigeschaltet, alle wurden informiert, und in der Nachweisliste ist sichtbar, wer abgeschlossen hat.</p>
         <p class="notin"><b>Nicht drin:</b> die Inhalte der Unterweisungen und die Prüfungsfragen, die liefert ihr. Lizenzen für LearningSuite, n8n, Server und Microsoft laufen direkt über euch.</p>
       </div>
       <div class="price">
@@ -481,10 +495,23 @@
         <div><div class="amount">4.000 €</div><div class="per">netto pro Monat</div></div>
         <div class="sub">3 Monate · monatliche Abrechnung · Start spätestens 1. Oktober 2026</div>
         <hr>
-        <div class="goal"><b>Ziel nach 3 Monaten</b><p>Die Sicherheitsunterweisung läuft über LearningSuite. Nutzer, Kurse, Prüfungen, Zertifikate, Nachweise und Erinnerungen laufen automatisch. Personalabteilung und Vorarbeiter sehen jederzeit den Stand.</p></div>
+        <div class="goal"><b>Ziel nach 3 Monaten</b><p>Die Sicherheitsunterweisung läuft über LearningSuite. Das Pflichtprogramm steht, Zertifikate und Erinnerungen folgen so früh wie möglich. Die Personalabteilung sieht jederzeit den Stand.</p></div>
         <hr>
-        <div class="sub"><b style="color:var(--bright)">Unsere Garantie:</b> Steht das Pflichtprogramm am 1. Januar 2027 nicht, arbeiten wir ohne Rechnung weiter, bis es steht. Es gelten unsere Garantiebedingungen.</div>
         <div class="sub"><b style="color:var(--inv)">Danach:</b> Wir planen gemeinsam die nächsten 3 Monate. Die Zusammenarbeit läuft in 3-Monats-Zyklen weiter, solange keiner sagt, dass wir aufhören. Kündigung jederzeit bis 2 Wochen vor Ende eines Zyklus per E-Mail.</div>
+      </div>
+    </div>
+    <div class="guarantee">
+      <div class="g-head"><span class="big">Garantie</span><span class="g-date">zum 1. Januar 2027</span></div>
+      <div class="g-body">
+        <p class="g-claim">Steht das Pflichtprogramm am 1. Januar nicht, arbeiten wir ohne Rechnung weiter, bis es steht.</p>
+        <ul class="g-list">
+          <li>Alle Mitarbeiter aus Entra ID angelegt</li>
+          <li>Abteilungen zugeordnet</li>
+          <li>Kurse freigeschaltet</li>
+          <li>Alle Mitarbeiter informiert</li>
+          <li>Nachweisliste zeigt, wer abgeschlossen hat</li>
+        </ul>
+        <p class="g-small">Es gelten unsere Garantiebedingungen.</p>
       </div>
     </div>
   </div>
@@ -494,8 +521,8 @@
 <section class="slide paper">
   <div class="inner">
     <p class="eyebrow">Und danach</p>
-    <h2 class="t t-lg">Wenn die Unterweisung läuft, <span class="g">geht noch mehr.</span></h2>
-    <p class="lead">Kein Teil dieses Angebots. Aber Themen, die ihr im Gespräch genannt habt und die auf demselben Fundament aufbauen.</p>
+    <h2 class="t t-lg">Was danach <span class="g">kommen kann.</span></h2>
+    <p class="lead">Nicht Teil dieses Angebots. Diese Themen habt ihr im Gespräch genannt, und sie bauen auf demselben Fundament auf.</p>
     <div class="later">
       <div class="card"><div class="num">01</div><h3>Onboarding neuer Mitarbeiter</h3><p>Firmenvorstellung durch die Geschäftsführung, Werte, Standardthemen im Video. Die gemeinsame Zeit mit Neuen wird persönlicher.</p></div>
       <div class="card"><div class="num">02</div><h3>Qualitätsmanagement</h3><p>Der nächste große Bereich, sobald die Sicherheitsunterweisung steht.</p></div>
@@ -517,7 +544,6 @@
         <div class="glass"><div class="num">4</div><h3>Spätestens 1. Oktober</h3><p style="color:#fff;opacity:.85">Kick-off und Start mit dem Audit. Passt es euch früher, starten wir gern früher.</p></div>
       </div>
     </div>
-    <p class="quote">Am 1. Januar steht keine Liste mit Folien. Sondern ein System, das läuft.</p>
   </div>
 </section>
 
